@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'user.apps.UserConfig',
+    'movies.apps.MoviesConfig',
 ]
 
 MIDDLEWARE = [

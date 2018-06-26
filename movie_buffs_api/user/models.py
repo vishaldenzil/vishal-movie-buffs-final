@@ -15,5 +15,6 @@ class User(models.Model):
             'first_name': self.first_name,
             'last_name': self.last_name,
             'age': self.age,
+            'movies': []
         }
-        db.child('users').push(data, user['idToken'])
+        db.child('users').child(user['localId']).set(data)
