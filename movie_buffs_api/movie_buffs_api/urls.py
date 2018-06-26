@@ -18,6 +18,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('user/', include('user.urls')),
     path('movies/', include('movies.urls'))
+=======
+    path('user/', include('user.urls'))
+>>>>>>> 604030a... made user api
 ]

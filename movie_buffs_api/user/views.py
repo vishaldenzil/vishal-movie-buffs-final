@@ -1,13 +1,22 @@
+<<<<<<< HEAD
+=======
+from .serializers import UserSerializer
+>>>>>>> 604030a... made user api
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http import JsonResponse
 from rest_framework import status
+<<<<<<< HEAD
 from .firebase_config import auth, db
+=======
+from .firebase_config import auth
+>>>>>>> 604030a... made user api
 
 
 @csrf_exempt
 def register(request):
     if request.method == 'POST':
+<<<<<<< HEAD
         fields = JSONParser().parse(request)
         data = {
             'first_name': fields['first_name'],
@@ -21,6 +30,14 @@ def register(request):
             return JsonResponse(user, status=status.HTTP_201_CREATED, safe=False)
         except Exception as e:
             return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST, safe=False)
+=======
+        data = JSONParser().parse(request)
+        serializer = UserSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+>>>>>>> 604030a... made user api
 
 
 @csrf_exempt
@@ -40,6 +57,7 @@ def logout(request):
         ref_token = request.GET.get('ref_token', '')
         auth.refresh(ref_token)
         return JsonResponse({'logout': True}, status=status.HTTP_200_OK)
+<<<<<<< HEAD
 
 
 @csrf_exempt
@@ -65,3 +83,5 @@ def add_user_movie(request):
             return JsonResponse({}, status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST)
+=======
+>>>>>>> 604030a... made user api
