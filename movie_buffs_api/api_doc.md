@@ -52,7 +52,7 @@ response: {
 #### Method: GET
 ``` javascript
 params: {
-    "refresh_token": "AK2wQ-yrjNxyf7zCiv87fNnWCfSRmW3eH4Kl2AilzV1G1FsRO_kGF9C4boshHoJ-t3XAYcpD2gXLWh_9zyELMzVdXv3dw_wlKhWRnlk8y5GfbryNp4fIuIA997Ncd8_eh-d-1Nv_a53zY8M4sGigBP18IGzxzZIy1U2z65oNCyRbrCimxo4wZI2zrWIPbH_97NHwiRWokwbVFkgQRIPB-Ukmc5YONpLUccWnL9fBv92vg1uJNv7lBeM"
+    "refresh_token": "AK2wQ-yrjNxyf7zCiv87fNnWCfSRmW3eH4..."
 }
 headers: {}
 body: {}
