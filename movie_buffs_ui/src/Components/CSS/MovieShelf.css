@@ -1,0 +1,16 @@
+.movie-shelf {
+  padding: 0 10px 20px;
+}
+
+@media (min-width: 600px) {
+  .movie-shelf {
+    padding: 0 20px 40px;
+  }
+}
+
+.movie-shelf-title {
+  border-bottom: 1px solid #dedede;
+}
+.movie-shelf-movies {
+  text-align: center;
+}

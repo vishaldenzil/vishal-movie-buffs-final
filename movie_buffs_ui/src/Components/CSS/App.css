@@ -26,3 +26,118 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.movie-title {
+  padding: 8px 0px 0px 25px;
+}
+
+.movie-cover-conatiner {
+  text-align: center;
+  /*border: 2px solid red;*/
+}
+
+.movie-cover {
+  margin: 35px 0px 35px 0px; 
+  border: 5px solid white;
+  border-radius: 4px;
+  height: 288px;
+  width: 195px;
+}
+
+.dark-bg {
+  background-color: black;
+  color: white;
+  box-shadow: 0px 35px 20px #777;
+}
+
+.light-bg {
+  color: black
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 60px;
+  float: left;
+  margin-left: 5%;
+}
+
+.App-header {
+  background-color: #222;
+  height: 65px;
+
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Header-text {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 15px;
+  padding-top: 25px;
+  
+}
+
+.Search-container {
+  position: relative;
+}
+
+.quick-search-input {
+  width: 250px;
+  height: 35px;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #919191;
+  border: 2px solid #333;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding: 4px 30px;
+  background: #1d1d1d url(https://yts.am/assets/images/website/icon-search.svg)
+    no-repeat 9px 8px;
+  margin-left: 15%;
+  margin-top: 17px;
+  float:right;
+}
+
+.logout-btn {
+  width: 100px;
+  height: 35px;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #919191;
+  border: 2px solid #333;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding: 4px 30px;
+  background: #1d1d1d;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 17px;
+  float: right;
+}
+
+/* properties to make border green color while input is focoused */
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+  border: 1px solid green !important;
+  box-shadow: 0 1px 4px green !important;
+  -moz-box-shadow: 0 1 4px green !important;
+  -webkit-box-shadow: 0 1 4px green !important;
+  outline-offset: 0px !important;
+  outline: none !important;
+}
