@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import "../CSS/MovieShelf.css";
+import MovieGrid from "./MovieGrid.js";
 
 export default class MovieShelf extends Component {
   render() {
     const element = (
       <div className="movie-shelf">
-        <h2 className="movie-shelf-title">{this.props.title}</h2>
         <MovieGrid />
       </div>
     );
     return element;
   }
 }
+
+
