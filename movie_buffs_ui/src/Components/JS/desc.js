@@ -9,7 +9,7 @@ export default class Description extends Component
             <div>
                 <div className="row">
                     <div className="column-1">
-                       <img src="https://imgc.allpostersimages.com/img/posters/blade-runner-2049-fire-ice_u-L-F9524N0.jpg?src=gp&w=300&h=375" />
+                       <img classname="desc-img "src="https://imgc.allpostersimages.com/img/posters/blade-runner-2049-fire-ice_u-L-F9524N0.jpg?src=gp&w=300&h=375" />
                     </div>
                     <div className="column-2">
                      <div class="row-1">
