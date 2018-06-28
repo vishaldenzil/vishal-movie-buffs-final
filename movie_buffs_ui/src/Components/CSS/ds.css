@@ -1,0 +1,43 @@
+.row
+{
+  margin-left:20%;
+  margin-right:20%;
+  margin-top:2%;
+  display:grid;
+  grid-template-columns: 3fr 7fr;
+}
+.iframe
+{
+  margin-left:20%;
+  margin-right:20%;
+  margin-top:5%;
+}
+.img
+{
+  height:288px;
+  width:195px;
+  border:5px solid whitesmoke;
+}
+.column-2
+{
+  margin-left :3%;
+}
+.movie-grid
+{
+
+  margin-left:20%;
+  margin-right:20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr  ;
+  grid-row-gap: 2px;
+  grid-column-gap: 2%;
+  
+}
+.search-bar
+{
+  margin-left:20%;
+  margin-right:20%;
+  display:grid;
+  grid-template-columns: 8fr 2fr;
+  padding:5%;
+}
