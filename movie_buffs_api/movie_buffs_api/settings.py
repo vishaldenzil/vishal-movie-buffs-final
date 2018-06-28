@@ -38,20 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-<<<<<<< HEAD
     'corsheaders',
     'user.apps.UserConfig',
     'movies.apps.MoviesConfig',
 ]
 
-MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-=======
-    'user.apps.UserConfig',
-]
 
 MIDDLEWARE = [
->>>>>>> 604030a... made user api
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,11 +55,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-<<<<<<< HEAD
 CORS_ORIGIN_ALLOW_ALL = True
 
-=======
->>>>>>> 604030a... made user api
 ROOT_URLCONF = 'movie_buffs_api.urls'
 
 TEMPLATES = [
