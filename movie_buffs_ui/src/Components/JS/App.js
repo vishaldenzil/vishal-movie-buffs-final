@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import logo from '../ICONS/logo.svg';
 import {login, register} from '../../MoviesBuffsApi.js';
