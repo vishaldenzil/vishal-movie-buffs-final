@@ -64,7 +64,7 @@ export default class Login extends Component {
               </div>
               <div class="input-group password">
                 <span class="input-group-addon">
-                <i class="fas fa-unlock-alt"></i>
+                <i class="fas fa-lock"></i>
                 </span>
                 <input
                   className="form-control height-width"
@@ -78,7 +78,7 @@ export default class Login extends Component {
                 Login
               </button>
             </form>
-            <hr/>
+            <hr className="line-sapration"/>
             <div className="online-login">
             <h5 className="social-login-text">Login with Social</h5>
                 <div className="google-login">
@@ -86,8 +86,8 @@ export default class Login extends Component {
                 <div className="fb-login">
                 </div>
             </div>
-            <hr/>
-            <h5 className="register-text">New to MovieBuff?<code><NavLink to="/register">register</NavLink></code></h5>
+            <hr className="line-sapration"/>
+            <h5 className="register-text">New to MovieBuff ?  <code><NavLink to="/register">register here...</NavLink></code></h5>
             </div>
         </div>
       </div>
