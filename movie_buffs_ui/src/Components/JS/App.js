@@ -3,6 +3,7 @@ import '../CSS/App.css';
 import  {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Login from './Login.js';
 import Register from './Register.js';
+import Description from './Description.js'
 
 
 export default class App extends Component {
@@ -12,6 +13,7 @@ export default class App extends Component {
                                 <Route path='/' component={Login} exact />
                                 <Route path='/register' component={Register} exact />
                                 <Route path='/home' exact />
+                                <Route path='/desc' component={Description} exact />
                             </Switch>
                         </BrowserRouter>
         return element
