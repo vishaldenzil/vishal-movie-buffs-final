@@ -5,7 +5,7 @@ import Login from './Login.js';
 import Register from './Register.js';
 import Home from './Home.js'
 import Description from './Description.js'
-import Home from './Home.js'
+
 
 
 export default class App extends Component {
