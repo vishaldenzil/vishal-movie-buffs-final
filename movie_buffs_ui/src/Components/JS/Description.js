@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../CSS/App.css';
+import '../CSS/Description.css';
 import Iframe from 'react-iframe'
 import {searchId} from '../../MoviesBuffsApi'
 export default class Description extends Component
