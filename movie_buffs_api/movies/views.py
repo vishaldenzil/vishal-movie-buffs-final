@@ -11,7 +11,7 @@ def get_trailer_youtube_url(title):
     title = title.replace(' ', '+') + '+trailer'
     html_content = req.urlopen("http://www.youtube.com/results?search_query=" + title)
     search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
-    trailer_youtube_url = "http://www.youtube.com/watch?v=" + str(search_results[0])
+    trailer_youtube_url = "http://www.youtube.com/embed/" + str(search_results[0])
     return trailer_youtube_url
 
 
