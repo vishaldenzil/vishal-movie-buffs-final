@@ -3,12 +3,11 @@ import logo from '../ICONS/logo.svg';
 import {login, register} from '../../MoviesBuffsApi.js';
 import '../CSS/App.css';
 import bg3 from "../CSS/img/bg3.jpeg";
-
+import Description from "./description"
 
 export default class App extends Component {
     render() {
         const element = <div>
-                            <Register />
                             <Home />
                         </div>
         return element
@@ -142,18 +141,7 @@ class Home extends Component {
       const element = (
         <div>
           <Header />
-          <div className="main-container">
-            <div className="container-fluid dark-bg">
-              <div className="container dark-bg">
-                <Carousel />
-              </div>
-            </div>
-            <div className="container-fluid light-bg">
-              <div className="container">
-                <MovieShelf />
-              </div>
-            </div>
-          </div>
+          <Description/>
         </div>
       );
       return element;

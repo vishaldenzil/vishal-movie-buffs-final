@@ -71,7 +71,7 @@ export const searchTitle = (title) => {
 }
 
 export const searchId = (imdb_id) => {
-	return fetch(`${api}/movies/search_id/imdb_id=${imdb_id}`, {
+	return fetch(`${api}/movies/search_id/?imdb_id=${imdb_id}`, {
 		method: 'GET'
 	})
 	.then((response) => {
