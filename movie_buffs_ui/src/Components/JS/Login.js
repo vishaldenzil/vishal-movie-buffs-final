@@ -87,8 +87,8 @@ export default class Login extends Component {
                 </div>
             </div>
             <hr/>
-            <NavLink to="/register">register</NavLink>
-          </div>
+            <h5 className="register-text">New to MovieBuff?<code><NavLink to="/register">register</NavLink></code></h5>
+            </div>
         </div>
       </div>
     );
