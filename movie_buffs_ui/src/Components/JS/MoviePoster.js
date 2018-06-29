@@ -15,9 +15,12 @@ export default class MoviePoster extends Component {
         if(this.props.movie) {
             searchId(this.props.movie)
             .then((movie) => {
-                this.setState({
-                    movie: movie.movie
-                })
+                if(movie.movie.Poster !== 'N/A') {
+                    this.setState({
+                        movie: movie.movie
+                    })
+                }
+                
             })
         }
     }

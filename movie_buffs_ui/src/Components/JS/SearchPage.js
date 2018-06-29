@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import '../CSS/Search.css';
+import "../CSS/MovieGrid.css";
+import "../CSS/SearchPage.css";
 import {searchTitle} from '../../MoviesBuffsApi'
-
+import MoviePoster from './MoviePoster'
+import Header from './Header'
+import MovieGrid from './MovieGrid'
 export default class SearchItem extends Component
 {
     constructor()
@@ -29,34 +32,43 @@ export default class SearchItem extends Component
 
    render()
    {
-       let data =this.state.MovieSearch;
       return(
-        
-               <div>
-                      
-            
-                    <div className="movie-grid "> 
-                    {data.map(element=>{
-                        if(element.Poster !== "N/A")
-                            return <Movie Poster={element.Poster}/>
-                        }
-                    )}
+           <div>
+            <Header/>
 
-                         
-                    </div> 
-             </div>
+           
+
+            <div className="container-fluid light-bg">
+                    <div className="container size">
+                     <div className="search-item">
+                        <div className="search-text"><input className="search-box" type="text" /></div>
+                         <div className="search-sumbit"><input className="search-button"  type="submit"  value="Search"/></div>
+                     </div>
+                        <MovieGrid movies={this.state.MovieSearch.map((movie) => {
+                        if(movie.Poster !== "N/A") 
+                            return movie.imdbID
+                        })} />
+                    </div>
+                </div> 
+            </div>
 
            
       );
    }
 }
- class Movie extends Component
- {
-     
-     render()
-     {
-         return(
-            <div className="movie"> <img src={this.props.Poster}/></div> 
-        );
+
+
+{/* <div className="movie-shelf-container">
+                
+                
+<div className="row" > 
+  {data.map(element=>{
+      if(element.Poster !== "N/A")
+        return <MoviePoster key={element} movie={element}/>
      }
- }
+ )}
+
+     
+</div> 
+</div> */}
+ 
