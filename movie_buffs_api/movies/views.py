@@ -19,6 +19,7 @@ def get_trailer_youtube_url(title):
 def search_by_id(request):
     if request.method == 'GET':
         imdb_id = request.GET.get('imdb_id', '')
+        print(id)
         movie = requests.get("http://www.omdbapi.com/?apikey=b467032&i=" + imdb_id).json()
         trailer_youtube_url = get_trailer_youtube_url(movie['Title'])
         movie['trailer'] = trailer_youtube_url
