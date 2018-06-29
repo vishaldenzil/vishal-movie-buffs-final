@@ -55,7 +55,7 @@ export default class Register extends Component {
         console.log(this.state.firstName)
         register(this.state.firstName, this.state.lastName, this.state.age, this.state.email, this.state.password)
         .then((user) => {
-            this.props.history.push("/home")
+            this.props.history.push("/")
         }) 
         .catch((error) => {
             console.log(error)
