@@ -1,11 +1,12 @@
 /* https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg */
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 
 .main-login-container {
   background-image: linear-gradient(to right, #000 40%, transparent 58%),
     url("https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg");
   background-position: right top;
   height: 1100px;
+  width: 100%;
   display: grid;
   grid-template-rows: 3% 97%;
   grid-template-columns: 5% 95%;
@@ -90,3 +91,16 @@ button:hover {
 .register-text{
     
 }
+
+.input-group-addon {
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+}
+

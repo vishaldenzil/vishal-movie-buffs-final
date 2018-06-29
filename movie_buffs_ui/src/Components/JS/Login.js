@@ -52,7 +52,7 @@ export default class Login extends Component {
             <form>
               <div class="input-group email">
                 <span class="input-group-addon">
-                  <i class="glyphicon glyphicon-user" />
+                <i class="far fa-user"></i>
                 </span>
                 <input
                   className="form-control height-width"
@@ -64,7 +64,7 @@ export default class Login extends Component {
               </div>
               <div class="input-group password">
                 <span class="input-group-addon">
-                  <i class="glyphicon glyphicon-lock" />
+                <i class="fas fa-unlock-alt"></i>
                 </span>
                 <input
                   className="form-control height-width"
