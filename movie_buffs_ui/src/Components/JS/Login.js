@@ -46,7 +46,7 @@ export default class Login extends Component {
   render() {
     const element = (
       <div>
-        <Header />
+        <Header components={{Logout: false, Seacrh: false}}/>
         <div className="main-login-container">
           <div className="main-helper-container">
             <div className="login-container">
