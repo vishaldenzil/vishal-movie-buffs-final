@@ -6,6 +6,7 @@ import {searchTitle} from '../../MoviesBuffsApi'
 import MoviePoster from './MoviePoster'
 import Header from './Header'
 import MovieGrid from './MovieGrid'
+import {DebounceInput} from 'react-debounce-input';
 export default class SearchItem extends Component
 {
     constructor()
@@ -20,13 +21,20 @@ export default class SearchItem extends Component
     getMovieSearch(event)
     {
        let title=event.target.value;
-       if(title!==" ")
+       if(title.length==0)
+        {
+            this.setState({MovieSearch:[]})
+          
+        }
+        else
+    
         {
           searchTitle(title)
            .then((movie) => {
               this.setState({MovieSearch:movie})
             });
         }
+       
     }
 
     // componentDidMount()
@@ -43,8 +51,8 @@ export default class SearchItem extends Component
            <div className="container-fluid light-bg">
                     <div className="container size">
                      <div className="search-item">
-                        <div className="search-text"><input className="search-box" type="text" onChange={(event)=>this. getMovieSearch(event)} placeholder="Search by Movie Names"    /></div>
-                         <div className="search-sumbit"><input className="search-button"  type="submit"  value="Search"/></div>
+                     <DebounceInput minLength={2} debounceTimeout={500} onChange={event =>this.getMovieSearch(event)} />
+                     <div className="search-sumbit"><input className="search-button"  type="submit"  value="Search"/></div>
                      </div>
                         <MovieGrid movies={this.state.MovieSearch.map((movie) => {
                         if(movie.Poster !== "N/A" && movie.Poster!=" ") 

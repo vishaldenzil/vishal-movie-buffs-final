@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {searchId} from '../../MoviesBuffsApi.js'
 import {NavLink} from 'react-router-dom'
+import {searchId} from '../../MoviesBuffsApi.js'
 import "../CSS/MoviePoster.css";
 
 export default class MoviePoster extends Component {
@@ -33,11 +33,14 @@ export default class MoviePoster extends Component {
                                 <img
                                     className="movie-cover"
                                     src={this.state.movie.Poster && this.state.movie.Poster}
-                                    alt=""
-                                />
+                                    alt=""/>
                                 </NavLink>
+                                <div className='middle'>
+                                    <h6>{this.state.movie.Title}</h6>
+                                </div>
                             </div>
                         </div>
       return element;
   }
 }
+
