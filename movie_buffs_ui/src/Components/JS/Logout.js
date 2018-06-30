@@ -3,11 +3,11 @@ import "../CSS/Logout.css";
 
 export default class Logout extends Component {
   render() {
-    const elemant = (
+    const element = (
       <button type="button" className="logout-btn">
         Logout
       </button>
     );
-    return elemant;
+    return element;
   }
 }
