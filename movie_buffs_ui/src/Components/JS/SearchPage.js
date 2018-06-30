@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import "../CSS/MovieGrid.css";
 import "../CSS/SearchPage.css";
@@ -57,18 +58,3 @@ export default class SearchItem extends Component
    }
 }
 
-
-{/* <div className="movie-shelf-container">
-                
-                
-<div className="row" > 
-  {data.map(element=>{
-      if(element.Poster !== "N/A")
-        return <MoviePoster key={element} movie={element}/>
-     }
- )}
-
-     
-</div> 
-</div> */}
- 

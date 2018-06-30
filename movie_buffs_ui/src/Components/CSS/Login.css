@@ -1,14 +1,22 @@
 /* https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg */
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"); */
 
 .main-login-container {
   background-image: linear-gradient(to right, #000 40%, transparent 58%),
     url("https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg");
   background-position: right top;
   height: 1100px;
+  width: 100%;
+  
+  
+}
+
+.main-helper-container{
   display: grid;
   grid-template-rows: 3% 97%;
   grid-template-columns: 5% 95%;
+  width: 100%;
+  height: inherit;
 }
 
 input[type="text"],
@@ -16,6 +24,7 @@ input[type="password"] {
   width: 100%;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  color: white!important;
   background: #212121 !important;
 }
 
@@ -62,27 +71,61 @@ button:hover {
 
 .online-login {
   display: grid;
-  grid-template-columns: 45% 5% 5% 45% ;
+  grid-template-columns: 45% 5% 5% 45%;
 }
 
 .google-login {
   grid-column: 1;
   background-image: linear-gradient(to right, #000 40%, transparent 58%),
     url("");
-    border:white 2px solid;
-    height:40px;
-    border-radius: 4px;
+  border: white 2px solid;
+  height: 40px;
+  border-radius: 4px;
 }
 
 .fb-login {
   grid-column: 4/5;
   background-image: linear-gradient(to right, #000 40%, transparent 58%),
     url("");
-    border:white 2px solid;
-    height:40px;
-    border-radius: 4px;
+  border: white 2px solid;
+  height: 40px;
+  border-radius: 4px;
 }
 
-.social-login-text{
-    font-color:white;
+.social-login-text {
+  font-family: "Font Awesome";
+  color: white;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.register-text {
+  font-family: "Font Awesome";
+  color: white;
+  opacity: 0.8;
+  font-size: 16px;
+  
+}
+
+.input-group-addon {
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: 125%;
+  font-weight: 600;
+  color: #000;
+}
+
+.line-sapration{
+  color: white;
+  opacity: 1;
+  width: 100%;
 }
