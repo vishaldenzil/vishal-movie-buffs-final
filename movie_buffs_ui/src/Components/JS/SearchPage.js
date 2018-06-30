@@ -41,7 +41,7 @@ export default class SearchItem extends Component
             <div className="container-fluid light-bg">
                     <div className="container size">
                      <div className="search-item">
-                        <div className="search-text"><input className="search-box" type="text" /></div>
+                        <div className="search-text"><input className="search-box" type="text"   /></div>
                          <div className="search-sumbit"><input className="search-button"  type="submit"  value="Search"/></div>
                      </div>
                         <MovieGrid movies={this.state.MovieSearch.map((movie) => {
