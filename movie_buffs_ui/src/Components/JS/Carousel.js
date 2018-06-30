@@ -22,7 +22,7 @@ class Carousel extends Component {
                     <MovieGrid movies={this.props.upcoming.splice(0, 4)} />
                 </div>
             </div>
-      <a
+      {/* <a
       className="arrow carousel-control-prev"
       href="#demo"
       data-slide="prev"
@@ -35,7 +35,7 @@ class Carousel extends Component {
       data-slide="next"
       >
       <span className="carousel-control-next-icon effect" />
-      </a>
+      </a> */}
       </div>
       );
     return element;

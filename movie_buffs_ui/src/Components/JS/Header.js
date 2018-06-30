@@ -6,7 +6,6 @@ import Logout from "./Logout.js";
 import Search from "./Search.js";
 
 export default class Header extends Component {
-
     constructor() {
         super();
         this.state = {
