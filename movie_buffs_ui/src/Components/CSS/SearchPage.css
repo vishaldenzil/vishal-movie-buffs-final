@@ -1,0 +1,11 @@
+.search-box
+{
+    width:100%;
+    height:100%;
+}
+.search-item
+{
+ display: grid;
+ grid-template-columns: 3fr 2fr;
+ padding:5%;
+}
