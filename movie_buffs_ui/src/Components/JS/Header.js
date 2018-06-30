@@ -27,8 +27,9 @@ export default class Header extends Component {
                                     <img src={logo} className="App-logo" alt="logo" />
                                     <span className="Header-text">MovieBuffs</span>
                                 </NavLink>
-                                {(this.props.components.Logout) ? <Logout /> : ''} 
-                                {(this.props.components.Search) ? <Search /> : ''}
+                                {(this.props.components.logout) ? <Logout /> : ''}
+                                {(this.props.components.browseMovies) ? <NavLink to='/search' className='nav-link'>Browse Movies</NavLink> : ''} 
+                                {/*(this.props.components.Search) ? <Search /> : ''*/}
                             </header>
                         </div>
         return element;

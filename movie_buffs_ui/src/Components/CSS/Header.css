@@ -44,3 +44,13 @@ select:focus {
   outline-offset: 0px !important;
   outline: none !important;
 }
+
+.nav-link {
+  margin-top: 1%;
+  float:right;
+  color: gray;
+}
+
+.nav-link:hover {
+  color: white;
+}
