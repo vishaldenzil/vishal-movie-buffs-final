@@ -41,3 +41,10 @@
   grid-template-columns: 8fr 2fr;
   padding:5%;
 }
+
+.main-description-container{
+  width: 970px;
+  height: 850px;
+  margin: auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
