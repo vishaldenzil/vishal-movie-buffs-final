@@ -16,7 +16,8 @@ export default class Description extends Component
 
     getMovie()
     {
-       let id="tt0468569";
+      console.log(this.props.params)
+       let id= this.props.match.params.id;
        searchId(id)
          .then((movie) => {
              console.log(movie.Actors);
