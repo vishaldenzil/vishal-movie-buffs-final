@@ -5,6 +5,10 @@ import Logout from "./Logout.js";
 import Search from "./Search.js";
 
 export default class Header extends Component {
+  constructor(props){
+    super(props)
+    console.log(this.props)
+  }
   render() {
     const elemant = (
       <div className="Search-container">
