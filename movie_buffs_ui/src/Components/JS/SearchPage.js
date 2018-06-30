@@ -34,10 +34,7 @@ export default class SearchItem extends Component
    {
       return(
            <div>
-            <Header/>
-
-           
-
+            <Header components={{Logout: true, Search: false}}/>
             <div className="container-fluid light-bg">
                     <div className="container size">
                      <div className="search-item">

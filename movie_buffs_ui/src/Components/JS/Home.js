@@ -7,7 +7,7 @@ export default class Home extends Component {
   render() {
     const element = (
       <div>
-        <Header />
+        <Header components={{Search: true, Logout: true}}/>
         <Body />
       </div>
     );
