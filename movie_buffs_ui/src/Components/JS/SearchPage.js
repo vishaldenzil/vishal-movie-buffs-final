@@ -17,19 +17,22 @@ export default class SearchItem extends Component
           this.getMovieSearch=this.getMovieSearch.bind(this);
     }
 
-    getMovieSearch()
+    getMovieSearch(event)
     {
-       let title="the dark knight";
-       searchTitle(title)
-         .then((movie) => {
-            this.setState({MovieSearch:movie})
-         });
+       let title=event.target.value;
+       if(title!==" ")
+        {
+          searchTitle(title)
+           .then((movie) => {
+              this.setState({MovieSearch:movie})
+            });
+        }
     }
 
-    componentDidMount()
-    {
-       this.getMovieSearch();
-    }
+    // componentDidMount()
+    // {
+    //    this.getMovieSearch(this);
+    // }
 
    render()
    {
@@ -37,16 +40,15 @@ export default class SearchItem extends Component
            <div>
             <Header/>
 
-           
-
-            <div className="container-fluid light-bg">
+           <div className="container-fluid light-bg">
                     <div className="container size">
                      <div className="search-item">
-                        <div className="search-text"><input className="search-box" type="text"   /></div>
+                        <div className="search-text"><input className="search-box" type="text" onChange={(event)=>this. getMovieSearch(event)} placeholder="Search by Movie Names"    /></div>
                          <div className="search-sumbit"><input className="search-button"  type="submit"  value="Search"/></div>
                      </div>
                         <MovieGrid movies={this.state.MovieSearch.map((movie) => {
-                        if(movie.Poster !== "N/A") 
+                        if(movie.Poster !== "N/A" && movie.Poster!=" ") 
+                            console.log(movie.Poster)
                             return movie.imdbID
                         })} />
                     </div>
