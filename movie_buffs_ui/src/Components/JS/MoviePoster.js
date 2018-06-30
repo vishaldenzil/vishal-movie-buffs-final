@@ -27,6 +27,7 @@ export default class MoviePoster extends Component {
     }
 
     render() {
+        
         const element = <div className="col-md-3 col-sm-6">
                             <div className="movie-cover-conatiner">
                                 <NavLink to={`/desc/${this.state.movie.imdbID}`}>

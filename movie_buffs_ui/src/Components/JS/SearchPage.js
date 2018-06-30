@@ -29,7 +29,7 @@ export default class SearchItem extends Component
         else
     
         {
-          searchTitle(title)
+          searchTitle(title )
            .then((movie) => {
               this.setState({MovieSearch:movie})
             });
@@ -44,6 +44,7 @@ export default class SearchItem extends Component
 
    render()
    {
+       let MovieItems=[];
       return(
            <div>
             <Header/>
@@ -54,11 +55,17 @@ export default class SearchItem extends Component
                      <DebounceInput minLength={2} debounceTimeout={500} onChange={event =>this.getMovieSearch(event)} />
                      <div className="search-sumbit"><input className="search-button"  type="submit"  value="Search"/></div>
                      </div>
-                        <MovieGrid movies={this.state.MovieSearch.map((movie) => {
-                        if(movie.Poster !== "N/A" && movie.Poster!=" ") 
-                            console.log(movie.Poster)
-                            return movie.imdbID
-                        })} />
+                       {this.state.MovieSearch.map((movie) => {
+                        if(movie.Poster !== "N/A" && movie.Poster!=" ")
+                        {
+                         console.log(movie.Poster)
+                          MovieItems.push(movie.imdbID)
+                        }
+                        })} 
+                        <MovieGrid movies={MovieItems}/>
+
+                    
+
                     </div>
                 </div> 
             </div>
