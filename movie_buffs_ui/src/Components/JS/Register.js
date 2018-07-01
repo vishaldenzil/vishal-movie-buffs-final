@@ -72,7 +72,7 @@ export default class Register extends Component {
   render() {
     const element = (
       <div>
-        <Header />
+        <Header components={{search: false, logout:false, browseMovies:false}}/>
         <div className="main-register-container">
           <div className="register-helper-container">
             <div className="login-container">

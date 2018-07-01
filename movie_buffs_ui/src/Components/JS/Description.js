@@ -29,13 +29,15 @@ export default class Description extends Component {
     let data = this.state;
     return (
       <div>
-        <Header components={{logout:true, search: true, browseMovies: true}} />
+        <Header
+          components={{ logout: true, search: true, browseMovies: true }}
+        />
         <div className="main-description-container">
           <div className="row-first">
-            <div className="column-1">
-              <img src={data.Movies.movie && data.Movies.movie.Poster} />
+            <div className="column-1 desc-img-top-margin">
+              <img className="description-img" src={data.Movies.movie && data.Movies.movie.Poster} />
             </div>
-            <div className="column-2">
+            <div className="column-2 desc-img-top-margin">
               <div class="row-1">
                 <h3>{data.Movies.movie && data.Movies.movie.Title}</h3>
                 <h4>{data.Movies.movie && data.Movies.movie.Year}</h4>
@@ -58,12 +60,12 @@ export default class Description extends Component {
             <Iframe
               url={data.Movies.movie && data.Movies.movie.trailer}
               width="100%"
-              height="350px"
+              height="500px"
               id="myId"
               className="myClassname"
               display="initial"
               position="relative"
-              frameborder="0"
+              frameborder="20px"
               allowFullScreen
               ng-show="showvideo"
             />
