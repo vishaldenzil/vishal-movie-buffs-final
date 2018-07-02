@@ -1,50 +1,149 @@
-.row-first
-{
-  margin-left:20%;
-  margin-right:20%;
-  margin-top:2%;
-  display:grid;
+.row-first {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 30px;
+  display: grid;
   grid-template-columns: 3fr 7fr;
 }
-.iframe
-{
-  margin-left:20%;
-  margin-right:20%;
-  margin-top:5%;
-}
-.desc-img
-{
-  height:288px;
-  width:195px;
-  border:5px solid whitesmoke;
-}
-.column-2
-{
-  margin-left :3%;
-}
-.movie-grid
-{
 
-  margin-left:20%;
-  margin-right:20%;
+/* .desc-img-top-margin {
+  margin-top: 20px;
+} */
+
+.column-1 {
+  float: left;
+  margin-left: 20px;
+  height: 28rem;
+}
+
+.iframe-container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr  ;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 85% 15%;
+}
+
+.iframe {
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin: auto;
+  width: 125%;
+  height: fit-content;
+  /* border: 20px solid gray;
+  border-radius: 10px; */
+  padding: 0px;
+}
+
+.desc-img {
+  height: 288px;
+  width: 195px;
+  border: 5px solid whitesmoke;
+}
+
+.column-2 {
+  margin-left: 6%;
+  margin-top: 10px;
+}
+
+.movie-grid {
+  margin-left: 20%;
+  margin-right: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 2px;
   grid-column-gap: 2%;
-  
-}
-.search-bar
-{
-  margin-left:20%;
-  margin-right:20%;
-  display:grid;
-  grid-template-columns: 8fr 2fr;
-  padding:5%;
 }
 
-.main-description-container{
+.search-bar {
+  margin-left: 20%;
+  margin-right: 20%;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  padding: 5%;
+}
+
+.main-description-container {
   width: 970px;
-  height: 850px;
+  height: 910px;
   margin: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+.description-img {
+  border-radius: 8px;
+  border: 6px #0ffc26 solid;
+  height: 380px;
+  width: 280px;
+  margin: auto;
+}
+
+.movie-name {
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  letter-spacing: -0.03em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.year {
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  font-size: 1.65rem;
+  font-weight: bolder;
+  letter-spacing: -0.03em;
+}
+
+.movie-type {
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  letter-spacing: -0.03em;
+}
+
+.imdb-icon-font {
+  font-size: 180%;
+}
+
+.imdb-star {
+  font-size: 150%;
+  font-weight: 500;
+}
+
+.rating-text {
+  display: inline;
+  font-weight: bolder;
+  font-size: 150%;
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.height-bw-name-year {
+  display: block;
+  height: 15px;
+}
+
+.height-bw-year-rating {
+  display: block;
+  height: 10px;
+}
+
+.height-bw-rating-plot {
+  display: block;
+  height: 20px;
+}
+
+.plot{
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  font-size: 1.75rem;
+  font-weight: bolder;
+  letter-spacing: -0.03em;
+}
+
+.movie-description-para{
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  /* font-size: 1.75rem; */
+  /* font-weight: bold; */
+  font-size: 16px;
+  letter-spacing: -0.03em;
+}
+

@@ -29,44 +29,66 @@ export default class Description extends Component {
     let data = this.state;
     return (
       <div>
-        <Header components={{logout:true, search: true, browseMovies: true}} />
+        <Header
+          components={{ logout: true, search: true, browseMovies: true }}
+        />
         <div className="main-description-container">
           <div className="row-first">
             <div className="column-1">
-              <img src={data.Movies.movie && data.Movies.movie.Poster} />
+              <img
+                className="description-img"
+                src={data.Movies.movie && data.Movies.movie.Poster}
+              />
             </div>
             <div className="column-2">
               <div class="row-1">
-                <h3>{data.Movies.movie && data.Movies.movie.Title}</h3>
-                <h4>{data.Movies.movie && data.Movies.movie.Year}</h4>
-                <h6>{data.Movies.movie && data.Movies.movie.Genre}</h6>
-              </div>
-              <div>
-                <h6>
-                  {" "}
-                  Ratings : {data.Movies.movie && data.Movies.movie.imdbRating}
+                <h3 className="movie-name">
+                  {data.Movies.movie && data.Movies.movie.Title}
+                </h3>
+                <div className="height-bw-name-year" />
+                <h4 className="year">
+                  {data.Movies.movie && data.Movies.movie.Year}
+                </h4>
+
+                <h6 className="movie-type">
+                  {data.Movies.movie && data.Movies.movie.Genre}
                 </h6>
               </div>
+              <div className="height-bw-year-rating" />
               <div>
-                <h4> Plot </h4>
-                <p>{data.Movies.movie && data.Movies.movie.Plot}</p>
+                {" "}
+                <i class="fab fa-imdb imdb-icon-font" />
+                <h4 className="rating-text">
+                  &nbsp;&nbsp;&nbsp;
+                  {data.Movies.movie && data.Movies.movie.imdbRating}{" "}
+                </h4>
+                &nbsp;&nbsp;&nbsp;
+                <i class="fas fa-star imdb-star" />
+              </div>
+              <div>
+                <div className="height-bw-rating-plot" />
+                <h4 className="plot"> Plot </h4>
+                <p className="movie-description-para">
+                  {data.Movies.movie && data.Movies.movie.Plot}
+                </p>
               </div>
             </div>
           </div>
-
-          <div class="iframe">
-            <Iframe
-              url={data.Movies.movie && data.Movies.movie.trailer}
-              width="100%"
-              height="350px"
-              id="myId"
-              className="myClassname"
-              display="initial"
-              position="relative"
-              frameborder="0"
-              allowFullScreen
-              ng-show="showvideo"
-            />
+          <div className="iframe-container">
+            <div class="iframe">
+              <Iframe
+                url={data.Movies.movie && data.Movies.movie.trailer}
+                width="80%"
+                height="400px"
+                id="myId"
+                className="myClassname"
+                display="initial"
+                position="relative"
+                frameborder="20px"
+                allowFullScreen
+                ng-show="showvideo"
+              />
+            </div>
           </div>
         </div>
       </div>

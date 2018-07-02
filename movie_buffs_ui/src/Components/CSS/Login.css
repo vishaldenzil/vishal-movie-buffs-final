@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.main-helper-container{
+.main-helper-container {
   display: grid;
   grid-template-rows: 3% 97%;
   grid-template-columns: 5% 95%;
@@ -19,7 +19,7 @@ input[type="password"] {
   width: 100%;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  color: white!important;
+  color: white !important;
   background: #212121 !important;
 }
 
@@ -99,7 +99,6 @@ button:hover {
   color: white;
   opacity: 0.8;
   font-size: 16px;
-  
 }
 
 .input-group-addon {
@@ -119,7 +118,7 @@ button:hover {
   color: #000;
 }
 
-.line-sapration{
+.line-sapration {
   color: white;
   opacity: 1;
   width: 100%;
