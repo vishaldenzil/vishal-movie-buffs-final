@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'movies.apps.MoviesConfig',
 ]
 
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',

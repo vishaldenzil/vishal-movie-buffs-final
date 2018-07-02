@@ -1,0 +1,30 @@
+/* https://images.alphacoders.com/596/596931.jpg */
+
+.search-box {
+  width: 100%;
+  height: 100%;
+}
+
+.search-postion {
+  padding: 5%;
+}
+
+.search-input{
+    font-weight: bolder;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: white !important;
+  background: #212121 !important;
+}
+
+.main-container-for-search-page {
+  width: 970px;
+  height: 1250px;
+  margin: auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

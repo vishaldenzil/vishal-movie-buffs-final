@@ -1,0 +1,24 @@
+.arrow{
+    width:20px;
+}
+
+.carasole-width{
+    width:100%;
+    height:390px;
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.custom-carousel-indicators{
+    bottom: 0px !important;
+    margin-bottom: .5rem;
+}
+
+.custom-carousel-item{
+    height:360px!important;
+    width: 100%;
+    margin: auto;
+}
+
+

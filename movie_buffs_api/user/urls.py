@@ -7,4 +7,5 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('movies/', get_user_movies, name='user_movies'),
     path('add_movie/', add_user_movie, name='add_movie'),
+    path('recommended_movies/', get_recommended_movies, name='recommended_movies')
 ]
