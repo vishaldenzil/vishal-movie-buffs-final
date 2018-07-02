@@ -65,3 +65,13 @@ def add_user_movie(request):
             return JsonResponse({}, status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST)
+
+
+@csrf_exempt
+def get_recommended_movies(request):
+    if request.method == 'GET':
+        user_id = request.GET.get('user_id', '')
+        try:
+            user_movies = get_user_movies(request)
+            
+
