@@ -1,0 +1,41 @@
+@media screen and (max-width: 500px) {
+  .dark-bg {
+    height: 24.375rem;
+    width: 100%;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .main-container {
+    width: 22rem;
+    height: 53.125rem;
+  }
+
+  .light-bg {
+    width: fit-content;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .recomended-text {
+    text-align: center;
+    margin-left: 0.625rem;
+    font-size: 1.75rem !important;
+  }
+
+  .size {
+    height: fit-content;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .text-container {
+    text-align: center;
+    height: 1.875rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.1875rem;
+  }
+}

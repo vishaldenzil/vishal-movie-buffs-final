@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/Body.css";
+import "../CSS/body-responsive.css"
 import Carousel from "./Carousel.js";
 import MovieGrid from "./MovieGrid.js";
 
@@ -26,7 +27,7 @@ class Body extends Component {
   render() {
     return (
       <div className="main-container">
-        <div className="container-fluid dark-bg">
+        <div className="container-fluid dark-bg hide">
           <div className="container dark-bg">
             <Carousel upcoming={this.upcoming} />
           </div>

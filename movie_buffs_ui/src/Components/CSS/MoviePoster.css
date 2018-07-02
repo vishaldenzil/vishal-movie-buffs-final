@@ -1,3 +1,7 @@
+a{
+  color: #0ef20e !important;
+}
+
 .movie-cover-conatiner {
   text-align: center;
 }
@@ -5,14 +9,14 @@
 .movie-cover {
   position: relative;
   border-radius: 4px;
-  height: 288px;
-  width: 195px;
+  height: 18rem;
+  width: 12.1875rem;
   margin: auto;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .movie-cover:hover {
-  height: 298px;
+  height: 18.625rem;
   width: 205px;
   opacity: 0.3;
 }

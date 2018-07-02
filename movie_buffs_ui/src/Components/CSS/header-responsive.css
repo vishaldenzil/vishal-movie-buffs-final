@@ -1,0 +1,35 @@
+@media screen and (max-width: 500px) {
+  .Search-container {
+  }
+
+  .App-header {
+    height: 2.8rem;
+  }
+
+  .App-logo {
+    height: 2.75rem;
+    margin-left: 0%;
+  }
+
+  .Header-text {
+    margin-left: 0.2rem;
+    padding-top: 0.4rem;
+    font-size: 1.75rem !important;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+    margin-top: 0rem;
+  }
+
+  .search-icon {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 0rem;
+    margin-right: 0.1rem;
+  }
+
+  .movie-text{
+    display:none;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/MovieShelf.css";
+import "../CSS/movieshelf-responsive.css";
 import MovieGrid from "./MovieGrid.js";
 
 export default class MovieShelf extends Component {
