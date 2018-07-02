@@ -36,7 +36,7 @@ export default class MoviePoster extends Component {
               />
             </div>
           </NavLink>
-          <i class="fas fa-star star-position" />
+          <i className="fas fa-star star-position" />
           <span className="middle">
             {this.state.movie.imdbRating !== "N/A" ? (
               <h4>{this.state.movie.imdbRating}</h4>
