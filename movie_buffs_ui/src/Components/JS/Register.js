@@ -72,7 +72,9 @@ export default class Register extends Component {
   render() {
     const element = (
       <div>
-        <Header components={{search: false, logout:false, browseMovies:false}}/>
+        <Header
+          components={{ search: false, logout: false, browseMovies: false }}
+        />
         <div className="main-register-container">
           <div className="register-helper-container">
             <div className="login-container">
@@ -146,7 +148,7 @@ export default class Register extends Component {
                   <span class="dn dib-l v-mid mr1">
                     back to Sign In page
                     <i class="fas fa-sign-in-alt signin-icon" />
-                  </span>   
+                  </span>
                 </NavLink>
               </div>
             </div>
