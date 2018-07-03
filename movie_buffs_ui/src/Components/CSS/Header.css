@@ -48,7 +48,7 @@ select:focus {
 
 .nav-link {
   float:right;
-  color: gray;
+  color: gray !important;
   font-size: 1.5rem;
   margin-top: .5rem;
   font-weight: bolder;
@@ -56,7 +56,7 @@ select:focus {
 }
 
 .nav-link:hover {
-  color: white;
+  color: white!important;
 }
 
 .search-icon{

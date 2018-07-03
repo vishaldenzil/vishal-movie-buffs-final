@@ -1,6 +1,6 @@
 @media screen and (max-width: 600px) {
   .main-description-container {
-    width: 96vw;
+    width: 100vw;
     height: max-content;
     box-sizing: border-box;
     padding-left: 2vw;

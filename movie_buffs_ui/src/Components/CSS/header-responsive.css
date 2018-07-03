@@ -1,12 +1,12 @@
 @media screen and (max-width: 600px) {
   .Search-container {
-    width: 96vw;
+    width: 100vw;
     box-sizing: border-box;
   }
 
   .App-header {
     height: 2.8rem;
-    width: 96vw;
+    width: 100vw;
     box-sizing: border-box;
   }
 

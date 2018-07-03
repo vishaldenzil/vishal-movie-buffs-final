@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../CSS/MovieGrid.css";
 import "../CSS/SearchPage.css";
+import "../CSS/searchpage-responsive.css"
 import { searchTitle } from "../../MoviesBuffsApi";
 import MoviePoster from "./MoviePoster";
 import Header from "./Header";
