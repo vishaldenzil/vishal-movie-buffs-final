@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { register } from "../../MoviesBuffsApi.js";
 import { NavLink } from "react-router-dom";
 import "../CSS/Register.css";
+import "../CSS/register-responsive.css"
 import Header from "./Header.js";
+
 
 export default class Register extends Component {
   constructor() {

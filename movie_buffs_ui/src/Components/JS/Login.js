@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../MoviesBuffsApi.js";
 import Header from "./Header.js";
 import "../CSS/Login.css";
+import "../CSS/login-responsive.css"
 
 export default class Login extends Component {
   constructor() {

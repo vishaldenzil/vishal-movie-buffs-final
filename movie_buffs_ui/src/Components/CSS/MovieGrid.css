@@ -1,6 +1,22 @@
 /*@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");*/
 
-.movie-shelf-container{
+.movie-shelf-container {
+  margin-top: 0px;
+  height: 25erm;
+}
+
+@media screen and (max-width: 500px) {
+  .movie-shelf-container {
     margin-top: 0px;
-    height: 400px;
+    height: fit-content;
+  }
+
+  .row{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin: auto;
+  }
 }

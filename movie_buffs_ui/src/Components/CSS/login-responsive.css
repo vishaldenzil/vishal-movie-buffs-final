@@ -1,0 +1,61 @@
+@media screen and (max-width: 500px) {
+  a {
+    color: black;
+    letter-spacing: 0.1rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+  .main-login-container {
+    background-image: linear-gradient(to right, #000 0%, transparent 58%),
+      url("https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg");
+    height: 50rem;
+  }
+
+  .main-helper-container {
+  }
+
+  button {
+  }
+
+  .login-container {
+    width: 100%;
+  }
+
+  .email {
+  }
+
+  .password {
+  }
+
+  .height-width {
+  }
+
+  .online-login {
+    display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 2rem 1.5rem 2.5rem;
+  }
+
+  .google-login {
+    grid-row: 2;
+    grid-column: unset;
+  }
+
+  .fb-login {
+    grid-row: 5;
+    grid-column: unset;
+  }
+
+  .social-login-text {
+  }
+
+  .register-text {
+    font-size: 0.98rem;
+    font-weight: bolder;
+  }
+
+  .input-group-addon {
+  }
+
+  .line-sapration {
+  }
+}
