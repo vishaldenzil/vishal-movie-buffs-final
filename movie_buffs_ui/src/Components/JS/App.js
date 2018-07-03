@@ -9,6 +9,7 @@ import SearchPage from "./SearchPage.js";
 import Dashboard from "./DashBoard"
 
 export default class App extends Component {
+
   render() {
     const element = (
       <BrowserRouter>

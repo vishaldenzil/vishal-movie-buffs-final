@@ -8,21 +8,11 @@ class Carousel extends Component {
   constructor() {
     super()
     this.state = {
-      upcomingMovies: [], call:0
+      upcomingMovies: []
     }
   }
 
-  componentDidMount() {
-    upcomingMovies()
-    .then((upcomingMovies) => {
-      this.setState({upcomingMovies: Object.values(upcomingMovies),call:1})
-    });
-  }
-
-
   render() {
-    if(this.state.call === 0)
-      this.componentDidMount();
     const element = (
         <div id="demo" className="carousel slide" data-ride="carousel">
             <ul className="carousel-indicators custom-carousel-indicators">
@@ -32,19 +22,19 @@ class Carousel extends Component {
             </ul>
             <div className="carousel-inner carasole-width">
                 <div className="carousel-item active custom-carousel-item">
-                    <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
+                    <MovieGrid movies={(this.props.upcomingMovies.length) ? (this.props.upcomingMovies.splice(0, 4)) : []} />
                 </div>
                 <div className="carousel-item custom-carousel-item">
-                    <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
+                    <MovieGrid movies={(this.props.upcomingMovies.length) ? (this.props.upcomingMovies.splice(0, 4)) : []} />
                 </div>
                 <div className="carousel-item custom-carousel-item">
-                    <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
+                    <MovieGrid movies={(this.props.upcomingMovies.length) ? (this.props.upcomingMovies.splice(0, 4)) : []} />
                 </div>
             </div>
       </div>
       );
     return element;
-  }
+}
 }
 
 export default Carousel

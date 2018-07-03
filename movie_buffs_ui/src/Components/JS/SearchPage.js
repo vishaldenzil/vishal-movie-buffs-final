@@ -6,6 +6,7 @@ import MoviePoster from "./MoviePoster";
 import Header from "./Header";
 import MovieGrid from "./MovieGrid";
 import { DebounceInput } from "react-debounce-input";
+import {Redirect} from 'react-router-dom'
 
 export default class SearchItem extends Component {
   constructor() {
@@ -28,6 +29,9 @@ export default class SearchItem extends Component {
   }
 
   render() {
+    if(!localStorage.sessionDetails) {
+      return <Redirect to="/" />
+    }
     let MovieItems = [];
     return (
       <div>

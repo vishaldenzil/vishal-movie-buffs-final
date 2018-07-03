@@ -3,8 +3,10 @@ import "../CSS/Description.css";
 import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
+import {Redirect} from 'react-router-dom'
 
 export default class Description extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -26,6 +28,9 @@ export default class Description extends Component {
     this.getMovie();
   }
   render() {
+    if(!localStorage.sessionDetails) {
+      return <Redirect to="/" />
+    }
     let data = this.state;
     return (
       <div>

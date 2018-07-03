@@ -78,12 +78,22 @@ def get_recommended_movies(request):
         recommended_movies = db.child('users').child(user_id).child('recommended_movies').get().val()
         if recommended_movies:
             return JsonResponse(recommended_movies, status=status.HTTP_200_OK, safe=False)
+
+        # try:
+        #     user_movies = db.child('users').child(user_id).child('movies').get().val()
+        #     # user_movies = db.child('upcoming_movies').get().val()
+        #     imdb_id = random.choice(list(user_movies))
+        #     tmdb_id = str(requests.get('https://api.themoviedb.org/3/find/'
+        # +imdb_id+'?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&external_source=imdb_id').json()[
+        # 'movie_results'][0]['id'])
+        pages = list()
+        for p in range(1, 20):
+            pages.append(p)
+        page = str(random.choice(pages))
         try:
-            user_movies = db.child('users').child(user_id).child('movies').get().val()
-            print(user_movies)
-            imdb_id = random.choice(list(user_movies))
-            tmdb_id = str(requests.get('https://api.themoviedb.org/3/find/'+imdb_id+'?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&external_source=imdb_id').json()['movie_results'][0]['id'])
-            tmdb_movies = requests.get('https://api.themoviedb.org/3/movie/'+tmdb_id+'/similar_movies?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&page=1').json()['results'][:4]
+            tmdb_movies = random.sample(requests.get(
+                'https://api.themoviedb.org/3/movie/popular/?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&page=' + page).json()[
+                              'results'], 4)
             recommended_movies = dict()
             for movie in tmdb_movies:
                 try:
@@ -93,7 +103,8 @@ def get_recommended_movies(request):
                     for searched_movie in movies_per_search_term:
                         if len(recommended_movies.keys()) >= 4:
                             break
-                        recommended_movies[searched_movie['imdbID']] = searched_movie
+                        if searched_movie['Poster'] != 'N/A':
+                            recommended_movies[searched_movie['imdbID']] = searched_movie
                 except:
                     pass
             db.child('users').child(user_id).child('recommended_movies').set(recommended_movies)
