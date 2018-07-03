@@ -8,18 +8,22 @@ class Carousel extends Component {
   constructor() {
     super()
     this.state = {
-      upcomingMovies: []
+      upcomingMovies: [],call:0
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     upcomingMovies()
     .then((upcomingMovies) => {
-      this.setState({upcomingMovies: Object.values(upcomingMovies)})
-    })
+      this.setState({upcomingMovies: Object.values(upcomingMovies),call:1})
+    });
+
   }
 
+
   render() {
+    if(this.state.call==0)
+      this.componentDidMount();
     const element = (
         <div id="demo" className="carousel slide" data-ride="carousel">
             <ul className="carousel-indicators custom-carousel-indicators">

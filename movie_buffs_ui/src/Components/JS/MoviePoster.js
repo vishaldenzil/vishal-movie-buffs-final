@@ -31,7 +31,6 @@ export default class MoviePoster extends Component {
                 src={this.state.movie.Poster && this.state.movie.Poster}
                 alt=""
               />
-          
             <i className="fas fa-star star-position" ></i>
             <span className="middle">
               <h4>{this.state.movie.Title}</h4>

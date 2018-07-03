@@ -10,14 +10,15 @@ class Body extends Component {
     super();
     this.state = {
       recommendedMovies: []
-    }
+    };
   }
 
   componentDidMount() {
     recommendedMovies(JSON.parse(localStorage.sessionDetails).localId)
     .then((recommendedMovies) => {
       this.setState({recommendedMovies: Object.values(recommendedMovies)})
-    })
+    });
+
   }
 
   render() {
@@ -26,7 +27,7 @@ class Body extends Component {
       <div className="main-container">
         <div className="container-fluid dark-bg hide">
           <div className="container dark-bg">
-            <Carousel />
+            <Carousel i={true}/>
           </div>
         </div>
         <div className="container-fluid light-bg">
