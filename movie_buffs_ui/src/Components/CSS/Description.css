@@ -24,7 +24,6 @@
 
 .iframe {
   box-sizing: border-box;
-
   grid-column: 2;
   grid-row: 1;
   /* margin-left: 5%;
@@ -48,14 +47,14 @@
   margin-top: 10px;
 }
 
-.movie-grid {
+/* .movie-grid {
   margin-left: 20%;
   margin-right: 20%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 2px;
   grid-column-gap: 2%;
-}
+} */
 
 .search-bar {
   margin-left: 20%;
@@ -66,8 +65,8 @@
 }
 
 .main-description-container {
-  width: 970px;
-  height: 910px;
+  width: 60.625rem;
+  height: 56.875rem;
   margin: auto;
   color: white;
   background: #333333;
@@ -76,9 +75,9 @@
 
 .description-img {
   border-radius: 8px;
-  border: 6px #0ffc26 solid;
-  height: 380px;
-  width: 280px;
+  border: 6px #868686 solid;
+  height: 23.75rem;
+  width: 17.5rem;
   margin: auto;
 }
 

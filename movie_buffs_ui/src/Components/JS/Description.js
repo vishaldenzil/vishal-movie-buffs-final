@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/Description.css";
+import "../CSS/description-responsive.css";
 import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
@@ -78,8 +79,8 @@ export default class Description extends Component {
             <div class="iframe">
               <Iframe
                 url={data.Movies.movie && data.Movies.movie.trailer}
-                width="80%"
-                height="400px"
+                width="100%"
+                height="100%"
                 id="myId"
                 className="myClassname"
                 display="initial"

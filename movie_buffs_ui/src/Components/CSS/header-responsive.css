@@ -1,9 +1,13 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .Search-container {
+    width: 96vw;
+    box-sizing: border-box;
   }
 
   .App-header {
     height: 2.8rem;
+    width: 96vw;
+    box-sizing: border-box;
   }
 
   .App-logo {
@@ -23,13 +27,13 @@
   }
 
   .search-icon {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bolder;
-    margin-top: 0rem;
-    margin-right: 0.1rem;
+    margin-top: 0.5vh;
+    margin-right: 0vw;
   }
 
-  .movie-text{
-    display:none;
+  .movie-text {
+    display: none;
   }
 }

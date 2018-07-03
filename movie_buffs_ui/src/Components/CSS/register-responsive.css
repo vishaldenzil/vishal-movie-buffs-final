@@ -1,4 +1,4 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   a {
     color: black;
     letter-spacing: 0.1rem;
@@ -8,7 +8,7 @@
 
   .main-register-container {
     background-image: linear-gradient(to right, #000 0%, transparent 58%),
-      url("https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg");
+      url("https://monstersofgeek.files.wordpress.com/2015/04/superhero-collage.jpg");
     background-position: right top;
   }
 }

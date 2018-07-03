@@ -15,12 +15,12 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .logout-btn {
-    margin-left: 2%;
-    margin-right: 3%;
-    font-size: 1.5rem;
+    margin-left: .5vw;
+    margin-right: 2vw;
+    font-size: 2rem;
     font-weight: bolder;
-    margin-top: .8rem;
+    margin-top: 1vh;
   }
 }

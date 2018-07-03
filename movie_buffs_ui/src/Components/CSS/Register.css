@@ -1,7 +1,25 @@
+.main-register-container {
+  background-image: linear-gradient(to right, #000 40%, transparent 58%),
+    url("https://monstersofgeek.files.wordpress.com/2015/04/superhero-collage.jpg");
+  background-position: right top;
+  font-size: 16px;
+  height: 92.7vh;
+  width: 100%;  
+}
+
+.register-helper-container {
+  width: 100%;
+  height: inherit;
+  display: grid;
+  grid-template-rows: 3% 97%;
+  grid-template-columns: 5% 95%;
+}
+
+
 .input-text-margin {
-  height: 45px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  height: 7vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 }
 
 .form-control {
@@ -23,22 +41,6 @@
   font-size: 125%;
   font-weight: 600;
   color: #000;
-}
-
-.main-register-container {
-  background-image: linear-gradient(to right, #000 40%, transparent 58%),
-    url("https://monstersofgeek.files.wordpress.com/2015/04/superhero-collage.jpg");
-  background-position: right top;
-  height: 1100px;
-  width: 100%;
-}
-
-.register-helper-container {
-  width: 100%;
-  height: inherit;
-  display: grid;
-  grid-template-rows: 3% 97%;
-  grid-template-columns: 5% 95%;
 }
 
 .back-to-sign-in {

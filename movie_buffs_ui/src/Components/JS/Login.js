@@ -80,13 +80,13 @@ export default class Login extends Component {
                   Login
                 </button>
               </form>
-              <hr className="line-sapration" />
+              
               <div className="online-login">
                 <h5 className="social-login-text">Login with Social</h5>
                 <div className="google-login" />
                 <div className="fb-login" />
               </div>
-              <hr className="line-sapration" />
+              
               <h5 className="register-text">
                 New to MovieBuffs ?{" "}
                 <code>
