@@ -43,8 +43,8 @@ export const logout = (refreshToken) => {
 	})
 }
 
-export const getUserMovies = (imdb_id) => {
-	return fetch(`${api}/user/movies/?imdb_id=${imdb_id}`, {
+export const getUserMovies = (user_id) => {
+	return fetch(`${api}/user/movies/?user_id=${user_id}`, {
 		method: 'GET'
 	})
 	.then((response) => {
