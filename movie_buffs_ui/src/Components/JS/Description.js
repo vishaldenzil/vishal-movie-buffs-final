@@ -84,7 +84,7 @@ export default class Description extends Component {
                 className="myClassname"
                 display="initial"
                 position="relative"
-                frameborder="20px"
+                frameborder="5px"
                 allowFullScreen
                 ng-show="showvideo"
               />

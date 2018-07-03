@@ -23,10 +23,12 @@
 }
 
 .iframe {
+  box-sizing: border-box;
+
   grid-column: 2;
   grid-row: 1;
-  margin-left: 5%;
-  margin-right: 5%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
   margin: auto;
   width: 125%;
   height: fit-content;
@@ -67,7 +69,9 @@
   width: 970px;
   height: 910px;
   margin: auto;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: white;
+  background: #333333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .90), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .description-img {

@@ -1,4 +1,4 @@
-.hide{
+.hide {
   display: block;
 }
 
@@ -9,6 +9,10 @@
   width: 100%;
   padding: 0px;
 }
+/* 
+.background-for-home-page {
+  background-image: url("https://i0.wp.com/www.rankerpros.com/wp-content/uploads/2018/02/Movie-Collage.jpeg");
+} */
 
 .main-container {
   width: 60.625rem;
@@ -26,7 +30,7 @@
   float: left;
   margin: 0px;
   padding: 0px;
-  margin-left: .625rem;
+  margin-left: 0.625rem;
   padding-top: 0px;
   font-size: 1.75rem !important;
   font-weight: 555;
@@ -42,6 +46,6 @@
 
 .text-container {
   height: 1.875rem;
-  margin-top: .625rem;
-  margin-bottom: .1875rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.1875rem;
 }
