@@ -6,6 +6,10 @@
   grid-template-columns: 3fr 7fr;
 }
 
+.icon-size {
+  font-size: 160%;
+}
+
 /* .desc-img-top-margin {
   margin-top: 20px;
 } */

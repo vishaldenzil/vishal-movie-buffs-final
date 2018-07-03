@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../CSS/Logout.css";
 import { logout } from "../../MoviesBuffsApi.js";
 import { withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Logout extends Component {
   constructor() {
@@ -22,7 +23,22 @@ class Logout extends Component {
 
   render() {
     const element = (
-      <i className="fas fa-user-tie logout-btn" onClick={this.handleLogout} />
+     <div>
+      <i className="fas fa-user-tie logout-btn " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div> <NavLink className="drop-down" to="/dashboard">
+                Dashboard
+              </NavLink></div>
+              <div> 
+              <NavLink className="drop-down" to="/profile">
+                Profile
+              </NavLink></div>
+              <div> 
+              <NavLink className="drop-down" to="/logout" onClick={this.handleLogout}>
+              Logout
+              </NavLink></div>
+      </div>
+    </div>
     );
     return element;
   }
