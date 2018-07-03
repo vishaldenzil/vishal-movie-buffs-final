@@ -31,7 +31,7 @@ export default class Header extends Component {
           {this.props.components.logout ? <Logout /> : ""}
           {this.props.components.browseMovies ? (
             <NavLink to="/search" className="nav-link">
-              <i class="fas fa-search search-icon" />
+              <i className="fas fa-search search-icon" />
               <span className="movie-text"> MOVIES</span>
             </NavLink>
           ) : (

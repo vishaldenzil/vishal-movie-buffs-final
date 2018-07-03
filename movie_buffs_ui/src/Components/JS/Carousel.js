@@ -17,7 +17,6 @@ class Carousel extends Component {
     .then((upcomingMovies) => {
       this.setState({upcomingMovies: Object.values(upcomingMovies),call:1})
     });
-
   }
 
 

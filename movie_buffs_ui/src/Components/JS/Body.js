@@ -22,7 +22,6 @@ class Body extends Component {
   }
 
   render() {
-    console.log(this.state.recommendedMovies, 'reco')
     return (
       <div className="main-container">
         <div className="container-fluid dark-bg hide">

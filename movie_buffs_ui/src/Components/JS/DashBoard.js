@@ -15,7 +15,6 @@ export default class DashBoard extends Component {
       let user_id=JSON.parse(localStorage.sessionDetails).localId
       getUserMovies(user_id)
       .then((movies) => {
-        console.log(movies)
         this.setState({movies: Object.values(movies)});
       })
     }
