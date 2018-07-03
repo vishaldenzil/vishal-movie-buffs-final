@@ -6,6 +6,7 @@ import MoviePoster from "./MoviePoster";
 import Header from "./Header";
 import MovieGrid from "./MovieGrid";
 import { DebounceInput } from "react-debounce-input";
+
 export default class SearchItem extends Component {
   constructor() {
     super();
@@ -25,11 +26,6 @@ export default class SearchItem extends Component {
       });
     }
   }
-
-  // componentDidMount()
-  // {
-  //    this.getMovieSearch(this);
-  // }
 
   render() {
     let MovieItems = [];
@@ -55,7 +51,7 @@ export default class SearchItem extends Component {
               {this.state.MovieSearch.map(movie => {
                 if (movie.Poster !== "N/A" && movie.Poster != " ") {
                   console.log(movie.Poster);
-                  MovieItems.push(movie.imdbID);
+                  MovieItems.push(movie);
                 }
               })}
               <MovieGrid movies={MovieItems} />

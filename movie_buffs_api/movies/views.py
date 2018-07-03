@@ -19,7 +19,6 @@ def get_trailer_youtube_url(title):
 def search_by_id(request):
     if request.method == 'GET':
         imdb_id = request.GET.get('imdb_id', '')
-        print(id)
         movie = requests.get("http://www.omdbapi.com/?apikey=b467032&i=" + imdb_id).json()
         trailer_youtube_url = get_trailer_youtube_url(movie['Title'])
         movie['trailer'] = trailer_youtube_url
@@ -38,7 +37,24 @@ def search_by_title(request):
 @csrf_exempt
 def get_upcoming_movies(request):
     if request.method == 'GET':
-        upcoming_movies = request.get('https://api.themoviedb.org/3/movie/upcoming?\
-                                       api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&page=1')
-        for movie in upcoming_movies:
-            
+        upcoming_movies = db.child('upcoming_movies').get().val()
+        if upcoming_movies:
+            return JsonResponse(upcoming_movies, status=status.HTTP_200_OK, safe=False)
+
+        movies = requests.get(
+            'https://api.themoviedb.org/3/movie/upcoming?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&page=1'
+        ).json()['results']
+        upcoming_movies = dict()
+        for movie in movies:
+            try:
+                movies_per_search_term = \
+                    requests.get("http://www.omdbapi.com/?apikey=b467032&s=" + movie['original_title']).json()[
+                        'Search']
+                for searched_movie in movies_per_search_term:
+                    if searched_movie['Year'] == '2018':
+                        upcoming_movies[searched_movie['imdbID']] = searched_movie
+                        break
+            except:
+                pass
+        db.child('upcoming_movies').set(upcoming_movies)
+        return JsonResponse({upcoming_movies}, status=status.HTTP_200_OK, safe=False)

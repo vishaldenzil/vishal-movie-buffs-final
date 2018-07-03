@@ -1,8 +1,24 @@
 import React, { Component } from "react";
 import "../CSS/Carousel.css";
+import { upcomingMovies } from "../../MoviesBuffsApi.js"
 import MovieGrid from "./MovieGrid";
 
 class Carousel extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      upcomingMovies: []
+    }
+  }
+
+  componentWillMount() {
+    upcomingMovies()
+    .then((upcomingMovies) => {
+      this.setState({upcomingMovies: Object.values(upcomingMovies)})
+    })
+  }
+
   render() {
     const element = (
         <div id="demo" className="carousel slide" data-ride="carousel">
@@ -13,13 +29,13 @@ class Carousel extends Component {
             </ul>
             <div className="carousel-inner carasole-width">
                 <div className="carousel-item active custom-carousel-item">
-                    <MovieGrid movies={this.props.upcoming.splice(0, 4)} />
+                    <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
                 </div>
                 <div className="carousel-item custom-carousel-item">
-                    <MovieGrid movies={this.props.upcoming.splice(0, 4)} />
+                    <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
                 </div>
                 <div className="carousel-item custom-carousel-item">
-                    <MovieGrid movies={this.props.upcoming.splice(0, 4)} />
+                    <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
                 </div>
             </div>
       {/* <a

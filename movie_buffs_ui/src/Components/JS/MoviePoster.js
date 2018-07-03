@@ -7,19 +7,15 @@ export default class MoviePoster extends Component {
   constructor() {
     super();
     this.state = {
-      movie: ""
+      movie: {}
     };
   }
 
   componentDidMount() {
-    if (this.props.movie) {
-      searchId(this.props.movie).then(movie => {
-        if (movie.movie.Poster !== "N/A") {
-          this.setState({
-            movie: movie.movie
-          });
-        }
-      });
+    if(this.props.movie) {
+      this.setState({
+        movie: this.props.movie
+      })
     }
   }
 
@@ -38,11 +34,6 @@ export default class MoviePoster extends Component {
           </NavLink>
           <i className="fas fa-star star-position" />
           <span className="middle">
-            {this.state.movie.imdbRating !== "N/A" ? (
-              <h4>{this.state.movie.imdbRating}</h4>
-            ) : (
-              ""
-            )}
             <h4>{this.state.movie.Title}</h4>
           </span>
         </div>

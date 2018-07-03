@@ -31,12 +31,12 @@ export default class Login extends Component {
   handleLogin() {
     login(this.state.email, this.state.password)
       .then(user => {
-        this.props.history.push("/home");
         let sessionDetails = {
           localId: user.localId,
           refreshToken: user.refreshToken
         };
         localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
+        this.props.history.push("/home");
       })
       .catch(error => {
         console.log(error);

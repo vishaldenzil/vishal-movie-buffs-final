@@ -78,3 +78,21 @@ export const searchId = (imdb_id) => {
 		return response.json()
 	})
 }
+
+export const recommendedMovies = (user_id) => {
+	return fetch(`${api}/user/recommended_movies/?user_id=${user_id}`, {
+		method: 'GET'
+	})
+	.then((response) => {
+		return response.json()
+	})
+}
+
+export const upcomingMovies = () => {
+	return fetch(`${api}/movies/upcoming_movies/`, {
+		method: 'GET'
+	})
+	.then((response) => {
+		return response.json()
+	})
+}
