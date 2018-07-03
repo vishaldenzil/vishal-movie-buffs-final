@@ -52,9 +52,9 @@ export default class Login extends Component {
           <div className="main-helper-container">
             <div className="login-container">
               <form>
-                <div class="input-group email">
-                  <span class="input-group-addon">
-                    <i class="far fa-user" />
+                <div className="input-group email">
+                  <span className="input-group-addon">
+                    <i className="far fa-user" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -64,9 +64,9 @@ export default class Login extends Component {
                     onChange={this.handleEmailChange}
                   />
                 </div>
-                <div class="input-group password">
-                  <span class="input-group-addon">
-                    <i class="fas fa-lock" />
+                <div className="input-group password">
+                  <span className="input-group-addon">
+                    <i className="fas fa-lock" />
                   </span>
                   <input
                     className="form-control height-width"

@@ -8,7 +8,7 @@ class Carousel extends Component {
   constructor() {
     super()
     this.state = {
-      upcomingMovies: [],call:0
+      upcomingMovies: [], call:0
     }
   }
 
@@ -21,7 +21,7 @@ class Carousel extends Component {
 
 
   render() {
-    if(this.state.call==0)
+    if(this.state.call === 0)
       this.componentDidMount();
     const element = (
         <div id="demo" className="carousel slide" data-ride="carousel">
@@ -41,24 +41,10 @@ class Carousel extends Component {
                     <MovieGrid movies={(this.state.upcomingMovies.length) ? (this.state.upcomingMovies.splice(0, 4)) : []} />
                 </div>
             </div>
-      {/* <a
-      className="arrow carousel-control-prev"
-      href="#demo"
-      data-slide="prev"
-      >
-      <span className="carousel-control-prev-icon effect" />
-      </a>
-      <a
-      className="arrow carousel-control-next"
-      href="#demo"
-      data-slide="next"
-      >
-      <span className="carousel-control-next-icon effect" />
-      </a> */}
       </div>
       );
     return element;
-}
+  }
 }
 
 export default Carousel

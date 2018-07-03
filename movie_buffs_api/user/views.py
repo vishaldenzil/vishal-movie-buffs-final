@@ -49,11 +49,8 @@ def get_user_movies(request):
     if request.method == 'GET':
         user_id = request.GET.get('user_id', '')
         try:
-            user_movies = db.child('users').child(user_id).child('movies').get().val()
-            movies = list()
-            for movie in user_movies:
-                movies.append(db.child('movies').child(movie).get().val())
-            return JsonResponse(movies, status=status.HTTP_200_OK, safe=False)
+            user_movies = list(db.child('users').child(user_id).child('movies').get().val().values())
+            return JsonResponse(user_movies, status=status.HTTP_200_OK, safe=False)
         except Exception as e:
             return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST, safe=False)
 
