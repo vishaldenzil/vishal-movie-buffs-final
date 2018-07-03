@@ -64,3 +64,7 @@ select:focus {
   font-weight: bolder;
   margin-right: .5rem;
 }
+.drop-down
+{
+  width:5%;
+}

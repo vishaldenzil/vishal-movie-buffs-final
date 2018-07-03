@@ -28,6 +28,8 @@ export default class Header extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <span className="Header-text">MovieBuffs</span>
           </NavLink>
+
+          
           {this.props.components.logout ? <Logout /> : ""}
           {this.props.components.browseMovies ? (
             <NavLink to="/search" className="nav-link">
@@ -38,6 +40,8 @@ export default class Header extends Component {
             ""
           )}
           {/*(this.props.components.Search) ? <Search /> : ''*/}
+         
+          
         </header>
       </div>
     );
