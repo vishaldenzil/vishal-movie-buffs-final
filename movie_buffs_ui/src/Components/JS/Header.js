@@ -4,7 +4,6 @@ import "../CSS/Header.css";
 import "../CSS/header-responsive.css";
 import { NavLink } from "react-router-dom";
 import Logout from "./Logout.js";
-import Search from "./Search.js";
 
 export default class Header extends Component {
   constructor() {
@@ -23,7 +22,7 @@ export default class Header extends Component {
   render() {
     const element = (
       <div className="Search-container">
-        <header className="App-header av-blur-backdrop">
+        <header className="App-header">
           <NavLink to="/Home">
             <img src={logo} className="App-logo" alt="logo" />
             <span className="Header-text">MovieBuffs</span>

@@ -1,13 +1,15 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   a {
+    font-size: 1rem;
     color: black;
     letter-spacing: 0.1rem;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
   .main-login-container {
     background-image: linear-gradient(to right, #000 0%, transparent 58%),
-      url("https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/Mag1-june1._CB1527843954_SY1200_FMJPG_.jpg");
-    height: 50rem;
+      url("https://i0.wp.com/www.rankerpros.com/wp-content/uploads/2018/02/Movie-Collage.jpeg");
+    height: 93vh;
+    width: 100%;
   }
 
   .main-helper-container {
@@ -30,9 +32,11 @@
   }
 
   .online-login {
+    height: 22vh;
+    margin-top: 3vh;
     display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 2rem 1.5rem 2.5rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 40% 40%;
   }
 
   .google-login {
@@ -41,7 +45,7 @@
   }
 
   .fb-login {
-    grid-row: 5;
+    grid-row: 3;
     grid-column: unset;
   }
 
@@ -49,7 +53,7 @@
   }
 
   .register-text {
-    font-size: 0.98rem;
+    font-size: 1rem;
     font-weight: bolder;
   }
 

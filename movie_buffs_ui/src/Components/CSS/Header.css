@@ -1,3 +1,8 @@
+.Search-container {
+  position: relative;
+  font-size: 70px;
+}
+
 .App-header {
   background-color: #222;
   height: 4.375rem;
@@ -29,10 +34,6 @@
     0 2px 2px rgba(248, 248, 248, 0.23);
 }
 
-.Search-container {
-  position: relative;
-}
-
 input:focus,
 textarea:focus,
 button:focus,
@@ -47,7 +48,7 @@ select:focus {
 
 .nav-link {
   float:right;
-  color: gray;
+  color: gray !important;
   font-size: 1.5rem;
   margin-top: .5rem;
   font-weight: bolder;
@@ -55,7 +56,7 @@ select:focus {
 }
 
 .nav-link:hover {
-  color: white;
+  color: white!important;
 }
 
 .search-icon{

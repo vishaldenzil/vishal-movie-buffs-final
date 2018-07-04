@@ -1,67 +1,47 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .poster-size {
-    height: 32rem;
-    width: 19rem;
-    margin: .5rem 0rem .5rem 0rem;
+    height: 65vh;
+    width: 88.6vw;
+    margin: 0.1rem 0rem 0.1rem 0rem;
   }
 
   .movie-cover-conatiner {
-    height: 30rem;
-    width: 19rem;
+    height: 64vh;
+    width: 83.6vw;
+    margin: 10px 0px 10px 0px;
   }
 
   .movie-cover {
-    height: 24rem;
-    width: 18rem;
+    height: 62.5vh;
+    width: 81.6vw;
     display: block;
+
+  }
+    
+  .border-div{
+    height: 64vh;
+    width: 83.6vw;
+    margin: 10px 0px 10px 0px;
   }
 
-  .movie-cover:hover {
-  }
-
-  .middle {
-    opacity: 1;
-    position: absolute;
-    top: unset;
-    left: 27% ;
-    transform: unset;
-    margin-top: 3%;
-    color: black;
-    display: flex;
-    flex-flow: column;
-  }
-
-  .movie-cover-conatiner:hover .middle {
-  }
-
-  .text {
+  .middle{
+    display: none;
   }
 
   .star-position {
     opacity: 1;
     position: absolute;
-    top:unset;
-    right: 0;
+    top: 4vh;
+    right: 5vw;
     transform: unset;
-    float: unset;
+    float: right;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 2rem;
     display: inline;
     margin-top: 3%;
     color: black;
     display: block;
   }
 
-  .movie-cover-conatiner:hover .star-position {
-  }
-
-  .border-div {
-    margin: 0rem 0rem 0rem 0rem;
-    height: 31rem;
-    width: 19rem;
-    text-align: center !important;
-  }
-
-  .border-div:hover {
-  }
 }
+

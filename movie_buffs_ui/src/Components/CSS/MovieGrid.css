@@ -2,7 +2,7 @@
 
 .movie-shelf-container {
   margin-top: 0px;
-  height: 25erm;
+  height: 58vh;
 }
 
 @media screen and (max-width: 500px) {
@@ -15,8 +15,6 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: 0px;
-    margin-left: 0px;
     margin: auto;
   }
 }

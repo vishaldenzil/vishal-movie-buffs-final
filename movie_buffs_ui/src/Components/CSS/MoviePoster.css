@@ -9,16 +9,20 @@ a{
 .movie-cover {
   position: relative;
   border-radius: 4px;
-  height: 18rem;
-  width: 12.1875rem;
+  height: 42.5vh;
+  width: 14.6vw;
   margin: auto;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .movie-cover:hover {
-  height: 18.625rem;
-  width: 205px;
+  height: 43.5vh;
+  width: 15.6vw;
   opacity: 0.3;
+}
+
+.poster-size{
+
 }
 
 .middle {
@@ -44,10 +48,10 @@ a{
 }
 
 .text {
-  background-color: #4caf50;
+  background-color: black;
   color: white;
   font-size: 16px;
-  padding: 16px 32px;
+  padding: 1rempx 2rem;
 }
 
 .star-position {
@@ -68,20 +72,20 @@ a{
 }
 
 .border-div {
-  margin: 35px 0px 35px 0px;
+  margin: 2rem 0rem 2rem 0rem;
   border: 5px solid white;
   border-radius: 5px;
-  height: 298px;
-  width: 205px;
+  height: 44vh;
+  width: 15.6vw;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .border-div:hover {
-  margin: 25px 0px 25px 0px;
+  margin: 1.7rem 0rem 1.7rem 0rem;
   box-shadow: 0 56px 112px rgba(0, 0, 0, 0.25), 0 40px 40px rgba(0, 0, 0, 0.22);
-  height: 308px;
-  width: 215px;
-  border: 5px solid #0ef20e;
+  height: 45vh;
+  width: 16.5vw;
+  border: 5px solid black;
   border-radius: 10px;
   box-shadow: 0 56px 112px rgba(0, 0, 0, 0.25), 0 40px 40px rgba(0, 0, 0, 0.22);
   opacity: 1;
