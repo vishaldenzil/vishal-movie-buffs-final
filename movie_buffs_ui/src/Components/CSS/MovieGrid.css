@@ -2,7 +2,8 @@
 
 .movie-shelf-container {
   margin-top: 0px;
-  height: 58vh;
+  height: fit-content;
+  min-height: 70vh;
 }
 @media screen and (max-width: 932px) {
   .movie-shelf-container {

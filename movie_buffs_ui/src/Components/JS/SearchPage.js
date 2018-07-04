@@ -40,8 +40,8 @@ export default class SearchItem extends Component {
           components={{ logout: true, search: false, browseMovies: false }}
         />
         <div className="main-container-for-search-page">
-          <div className="container-fluid light-bg">
-            <div className="container size">
+          {/* <div className="container-fluid light-bg"> */}
+            {/* <div className="container size"> */}
               <div className="input-group search-postion">
                 <span className="input-group-addon">
                 <i class="fas fa-search"></i>
@@ -60,8 +60,8 @@ export default class SearchItem extends Component {
                 }
               })}
               <MovieGrid movies={MovieItems} />
-            </div>
-          </div>
+            {/* </div> */}
+          {/* </div> */}
         </div>
         <Footer />
       </div>

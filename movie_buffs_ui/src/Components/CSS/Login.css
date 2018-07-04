@@ -152,6 +152,7 @@ button.googleLogin {
   border: thin solid #888;
   box-shadow: 1px 1px 1px grey;
   white-space: nowrap;
+  padding: 0px;
 }
 #customBtn:hover {
   cursor: pointer;
