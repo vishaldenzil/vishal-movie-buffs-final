@@ -30,10 +30,6 @@ class Logout extends Component {
                 Dashboard
               </NavLink></div>
               <div> 
-              <NavLink className="drop-down" to="/profile">
-                Profile
-              </NavLink></div>
-              <div> 
               <NavLink className="drop-down" to="/logout" onClick={this.handleLogout}>
               Logout
               </NavLink></div>

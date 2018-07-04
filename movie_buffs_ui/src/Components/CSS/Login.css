@@ -166,6 +166,9 @@ span.icon {
   vertical-align: middle;
   width: 42px;
   height: 42px;
+  height: 25px;
+  padding: 0px;
+  margin: 0px;
 }
 span.buttonText {
   display: inline-block;
