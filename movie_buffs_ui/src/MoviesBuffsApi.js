@@ -108,3 +108,14 @@ export const googleRegister = (user) => {
 		})
 	})
 }
+
+export const addReview = (reviewData) => {
+	return fetch(`${api}/movies/add_review`, {
+		method: 'POST',
+		body: JSON.stringify({
+			'user_id': reviewData.user_id,
+			'imdb_id': reviewData.imdb_id,
+			'text': reviewData.text
+		})
+	})
+}

@@ -32,6 +32,8 @@ def register(request):
 def google_register_user(request):
     if request.method == 'POST':
         fields = JSONParser().parse(request)
+        if db.child('users').child(fields['uid']):
+            return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
         data = {
             'first_name': fields['first_name'],
             'last_name': fields['last_name'],
@@ -106,17 +108,9 @@ def add_user_movie(request):
 def get_recommended_movies(request):
     if request.method == 'GET':
         user_id = request.GET.get('user_id', '')
-        recommended_movies = db.child('users').child(user_id).child('recommended_movies').get().val()
-        if recommended_movies:
-            return JsonResponse(recommended_movies, status=status.HTTP_200_OK, safe=False)
-
-        # try:
-        #     user_movies = db.child('users').child(user_id).child('movies').get().val()
-        #     # user_movies = db.child('upcoming_movies').get().val()
-        #     imdb_id = random.choice(list(user_movies))
-        #     tmdb_id = str(requests.get('https://api.themoviedb.org/3/find/'
-        # +imdb_id+'?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&external_source=imdb_id').json()[
-        # 'movie_results'][0]['id'])
+        # recommended_movies = db.child('users').child(user_id).child('recommended_movies').get().val()
+        # if recommended_movies:
+        #     return JsonResponse(recommended_movies, status=status.HTTP_200_OK, safe=False)
         pages = list()
         for p in range(1, 20):
             pages.append(p)

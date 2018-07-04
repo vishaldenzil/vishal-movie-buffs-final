@@ -4,6 +4,7 @@ import "../CSS/description-responsive.css";
 import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
+import Reviews from "./Reviews.js";
 import {Redirect} from 'react-router-dom'
 import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
 
@@ -12,7 +13,9 @@ export default class Description extends Component {
   constructor() {
     super();
     this.state = {
-      Movies: {}
+      Movies: {
+        movie: {}
+      }
     };
     this.getMovie = this.getMovie.bind(this);
     this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
@@ -35,7 +38,6 @@ export default class Description extends Component {
   getMovie() {
     let id = this.props.match.params.id;
     searchId(id).then(movie => {
-      console.log(movie.Actors);
       this.setState({ Movies: movie });
     });
   }
@@ -124,6 +126,10 @@ export default class Description extends Component {
             </div>
           </div>
         </div>
+        { this.state.Movies.movie.reviews !== undefined && 
+          Object.values(this.state.Movies.movie.reviews).map((reviewItem) => {
+          return <Reviews reviews={{reviewItem}}></Reviews>
+        })}
       </div>
     );
   }

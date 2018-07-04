@@ -1,4 +1,5 @@
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
 from django.http import JsonResponse
 from rest_framework import status
 import requests
@@ -19,6 +20,9 @@ def get_trailer_youtube_url(title):
 def search_by_id(request):
     if request.method == 'GET':
         imdb_id = request.GET.get('imdb_id', '')
+        movie = db.child('movies').child(imdb_id).get().val()
+        if movie:
+            return JsonResponse({'movie': movie}, status=status.HTTP_200_OK, safe=False)
         movie = requests.get("http://www.omdbapi.com/?apikey=b467032&i=" + imdb_id).json()
         trailer_youtube_url = get_trailer_youtube_url(movie['Title'])
         movie['trailer'] = trailer_youtube_url
@@ -58,3 +62,18 @@ def get_upcoming_movies(request):
                 pass
         db.child('upcoming_movies').set(upcoming_movies)
         return JsonResponse({upcoming_movies}, status=status.HTTP_200_OK, safe=False)
+
+
+@csrf_exempt
+def add_review(request):
+    if request.method == 'POST':
+        review_data = JSONParser().parse(request)
+        try:
+            data = {
+                'user_name': db.child('users').child(review_data['user_id']).child('first_name').get().val(),
+                'review': review_data['text']
+            }
+            db.child('movies').child(review_data['imdb_id']).child('reviews').child(review_data['user_id']).set(data)
+            return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
+        except Exception as e:
+            return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST, safe=False)
