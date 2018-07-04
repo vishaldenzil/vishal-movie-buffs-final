@@ -24,7 +24,11 @@ input[type="password"] {
 
 .main-container-for-search-page {
   width: 970px;
-  height: 1250px;
+  background: white;
+  height: max-content;
+  background: #333333;
+  padding-right: 2vw;
+  padding-left:  2vw;
   margin: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
