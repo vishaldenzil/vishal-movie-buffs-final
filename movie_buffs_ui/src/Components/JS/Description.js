@@ -7,7 +7,7 @@ import Header from "./Header.js";
 import Reviews from "./Reviews.js";
 import {Redirect} from 'react-router-dom'
 import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
-
+import swal from 'sweetalert'
 export default class Description extends Component {
 
   constructor() {
@@ -26,12 +26,9 @@ export default class Description extends Component {
       if(imdb!=undefined)
     {
       let id=JSON.parse(localStorage.sessionDetails).localId
-      addUserMovie(id,imdb).then(alert("added to DashBoard"));
-      alert("added to DashBoard");
-    }
-    else
-    {
-      alert("Error in adding");
+      addUserMovie(id,imdb).then( swal({
+        title: 'Added to Dashboard ',
+      }));
     }
   }
 

@@ -67,7 +67,22 @@ a{
   font-size: 25px;
 }
 
-.movie-cover-conatiner:hover .star-position {
+.star-position::after {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 17%;
+  right: 8%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  float: right;
+  font-weight: bolder;
+  font-size: 25px;
+  color:goldenrod;
+}
+
+
+.movie-cover-conatiner:hover .star-position,.star-change {
   opacity: 1;
 }
 

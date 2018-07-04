@@ -4,20 +4,28 @@ import { searchId } from "../../MoviesBuffsApi.js";
 import "../CSS/MoviePoster.css";
 import "../CSS/movieposter-responsive.css";
 import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
+import swal from 'sweetalert'
 
 export default class MoviePoster extends Component {
   constructor() {
     super();
     this.state = {
-      movie: {}
+      movie: {},
+      isToggleOn: true
     };
       this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
+     
   }
 
   getMovieDashBoard(imdb)
   {
+    
       let id=JSON.parse(localStorage.sessionDetails).localId
-      addUserMovie(id,imdb).then(console.log(true));
+      addUserMovie(id,imdb).then(
+         swal({
+          title: 'Added to Dashboard ',
+        })
+      );
   }
 
   componentDidMount() {
@@ -45,7 +53,8 @@ export default class MoviePoster extends Component {
               <h4>{this.state.movie.Title}</h4>
             </span>
           </NavLink>
-          <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} className="fas fa-star star-position" />     
+            <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} 
+            className="fas fa-star star-position"  />   
         </div>
       </div>
     );

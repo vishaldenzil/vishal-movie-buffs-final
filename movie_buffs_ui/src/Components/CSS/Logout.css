@@ -16,13 +16,14 @@
 }
 
 a.drop-down {
-  padding: 5em 1.5em;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bolder;
+  color: white !important;
   font-family: cursive;
 }
 .dropdown-menu {
+  text-align: center; 
   background-color: gray;
 }
 

@@ -26,13 +26,13 @@ class Logout extends Component {
      <div>
       <i className="fas fa-user-tie logout-btn " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div> <NavLink className="drop-down" to="/dashboard">
-                Dashboard
-              </NavLink></div>
               <div> 
-              <NavLink className="drop-down" to="/logout" onClick={this.handleLogout}>
-              Logout
-              </NavLink></div>
+                <NavLink className="drop-down" to="/dashboard">Dashboard</NavLink>
+              </div>
+              <div><hr /></div>
+              <div> 
+                <NavLink className="drop-down" to="/logout" onClick={this.handleLogout}>Logout</NavLink>
+              </div>
       </div>
     </div>
     );
