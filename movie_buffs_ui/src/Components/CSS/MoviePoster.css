@@ -1,5 +1,5 @@
 a{
-  color: #4caf50 !important ;
+  text-decoration: none;
 }
 
 .movie-cover-conatiner {
@@ -35,6 +35,7 @@ a{
   -ms-transform: translate(-50%, -50%);
   text-align: center;
   /* color: #0ef20e; */
+  /* color: black; */
   font-weight: bolder;
   font-family: 'Shrikhand', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

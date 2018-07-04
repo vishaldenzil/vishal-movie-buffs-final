@@ -41,10 +41,11 @@ export default class MoviePoster extends Component {
               />
               
             </div>
+            </NavLink>
             <span className="middle">
               <h4>{this.state.movie.Title}</h4>
             </span>
-          </NavLink>
+          
               <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} className="fas fa-star star-position" />     
         </div>
       </div>

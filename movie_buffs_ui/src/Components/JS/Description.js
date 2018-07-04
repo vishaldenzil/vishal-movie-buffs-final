@@ -5,11 +5,10 @@ import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
 import Reviews from "./Reviews.js";
-import {Redirect} from 'react-router-dom'
-import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
+import { Redirect } from "react-router-dom";
+import { addUserMovie, getUserMovies } from "../../MoviesBuffsApi";
 
 export default class Description extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -21,16 +20,12 @@ export default class Description extends Component {
     this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
   }
 
-  getMovieDashBoard(imdb)
-  {
-      if(imdb!=undefined)
-    {
-      let id=JSON.parse(localStorage.sessionDetails).localId
-      addUserMovie(id,imdb).then(console.log(true));
+  getMovieDashBoard(imdb) {
+    if (imdb != undefined) {
+      let id = JSON.parse(localStorage.sessionDetails).localId;
+      addUserMovie(id, imdb).then(console.log(true));
       alert("added to DashBoard");
-    }
-    else
-    {
+    } else {
       alert("Error in adding");
     }
   }
@@ -46,8 +41,8 @@ export default class Description extends Component {
     this.getMovie();
   }
   render() {
-    if(!localStorage.sessionDetails) {
-      return <Redirect to="/" />
+    if (!localStorage.sessionDetails) {
+      return <Redirect to="/" />;
     }
     let data = this.state;
     return (
@@ -86,19 +81,22 @@ export default class Description extends Component {
                   {data.Movies.movie && data.Movies.movie.imdbRating}{" "}
                 </h4>
                 &nbsp;&nbsp;&nbsp;
-                <i onClick={()=>this.getMovieDashBoard(this.props.match.params.id)} class="fas fa-star imdb-star" />
+                <i
+                  onClick={() =>
+                    this.getMovieDashBoard(this.props.match.params.id)
+                  }
+                  class="fas fa-star imdb-star"
+                />
               </div>
               <div>
                 {" "}
-                <i className="far fa-money-bill-alt icon-size"></i>
+                <i className="far fa-money-bill-alt icon-size" />
                 <h4 className="rating-text">
                   &nbsp;&nbsp;&nbsp;
                   {data.Movies.movie && data.Movies.movie.BoxOffice}{" "}
                 </h4>
                 &nbsp;&nbsp;&nbsp;
-                
               </div>
-
 
               <div>
                 <div className="height-bw-rating-plot" />
@@ -125,11 +123,36 @@ export default class Description extends Component {
               />
             </div>
           </div>
+          <br />
+          <div className="user-reviews">
+            <div className="review-main-text">
+              <h2>User Reviews</h2>
+            </div>
+            <div className="user-review-input">
+              <div className="input-group email">
+                <input
+                  className="form-control height-width"
+                  type="text"
+                  placeholder="Add Review.."
+                  value={this.state.email}
+                  onChange={this.handleEmailChange}
+                />
+                <span className="input-group-addon-for-review ">
+                <i class="fas fa-marker add-review"></i>
+                </span>
+              </div>
+            </div>
+
+            <div className="container-for-reviews">
+              {this.state.Movies.movie.reviews !== undefined &&
+                Object.values(this.state.Movies.movie.reviews).map(
+                  reviewItem => {
+                    return <Reviews reviews={{ reviewItem }} />;
+                  }
+                )}
+            </div>
+          </div>
         </div>
-        { this.state.Movies.movie.reviews !== undefined && 
-          Object.values(this.state.Movies.movie.reviews).map((reviewItem) => {
-          return <Reviews reviews={{reviewItem}}></Reviews>
-        })}
       </div>
     );
   }

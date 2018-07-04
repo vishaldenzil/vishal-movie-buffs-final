@@ -89,6 +89,11 @@
     height: 35vh;
     margin-bottom: 5vh;
   }
+
+  .user-review-input{
+    /* width: 90%;
+    max-width: 90vw; */
+  }
   
 /* 
   .movie-grid {
@@ -101,4 +106,14 @@
   } */
   
   
+}
+
+
+@media screen and (max-width:500px){
+  .user-review-input {
+    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
