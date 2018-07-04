@@ -108,9 +108,9 @@ def add_user_movie(request):
 def get_recommended_movies(request):
     if request.method == 'GET':
         user_id = request.GET.get('user_id', '')
-        # recommended_movies = db.child('users').child(user_id).child('recommended_movies').get().val()
-        # if recommended_movies:
-        #     return JsonResponse(recommended_movies, status=status.HTTP_200_OK, safe=False)
+        recommended_movies = db.child('users').child(user_id).child('recommended_movies').get().val()
+        if recommended_movies:
+            return JsonResponse(recommended_movies, status=status.HTTP_200_OK, safe=False)
         pages = list()
         for p in range(1, 20):
             pages.append(p)

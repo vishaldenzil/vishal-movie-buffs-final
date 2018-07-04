@@ -45,7 +45,7 @@ export default class MoviePoster extends Component {
               <h4>{this.state.movie.Title}</h4>
             </span>
           </NavLink>
-              <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} className="fas fa-star star-position" />     
+          <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} className="fas fa-star star-position" />     
         </div>
       </div>
     );

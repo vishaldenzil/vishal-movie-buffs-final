@@ -26,7 +26,7 @@ export default class Description extends Component {
       if(imdb!=undefined)
     {
       let id=JSON.parse(localStorage.sessionDetails).localId
-      addUserMovie(id,imdb).then(console.log(true));
+      addUserMovie(id,imdb).then(alert("added to DashBoard"));
       alert("added to DashBoard");
     }
     else
