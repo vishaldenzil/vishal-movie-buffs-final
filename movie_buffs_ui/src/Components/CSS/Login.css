@@ -1,3 +1,6 @@
+/* https://i0.wp.com/www.rankerpros.com/wp-content/uploads/2018/02/Movie-Collage.jpeg */
+/*http://www.theculturist.com/storage/Cinema_of_the_World_DIFF_2017.gif?__SQUARESPACE_CACHEVERSION=1511774690125 */
+
 .main-login-container {
   background-image: linear-gradient(to right, #000 40%, transparent 58%),
     url("https://i0.wp.com/www.rankerpros.com/wp-content/uploads/2018/02/Movie-Collage.jpeg");
@@ -27,8 +30,8 @@ input[type="password"] {
 button {
   background-color: #4caf50;
   color: white;
-  padding: .875rem 1.25rem;
-  margin: .5rem 0;
+  padding: 0.875rem 1.25rem;
+  margin: 0.5rem 0;
   border: none;
   cursor: pointer;
   width: 100%;
