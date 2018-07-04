@@ -47,7 +47,7 @@
 }
 
 .text-container {
-  height: 1.875rem;
-  margin-top: 0.625rem;
-  margin-bottom: 0.1875rem;
+  height: 6vh;
+  margin-top:0.5vh;
+  margin-bottom: -0.5vh;
 }

@@ -1,6 +1,6 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 786px) {
   .poster-size {
-    height: 65vh;
+    height: 66vh;
     width: 88.6vw;
     margin: 0.1rem 0rem 0.1rem 0rem;
   }

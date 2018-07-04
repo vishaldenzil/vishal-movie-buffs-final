@@ -1,6 +1,5 @@
 .Search-container {
   position: relative;
-  font-size: 70px;
 }
 
 .App-header {
@@ -11,9 +10,9 @@
 }
 
 .App-logo {
-  height: 3.75rem;
+  height: 10.9vh;
   float: left;
-  margin-left: 5%;
+  margin-left: 5vw;
 }
 
 .App-logo:hover {
@@ -25,8 +24,8 @@
   float: left;
   margin: 0px;
   padding: 0px;
-  margin-left: .625rem;
-  padding-top: .625rem;
+  margin-left: .1vw;
+  padding-top: 1.5vh;
   font-size: 2.375rem !important;
   font-weight: 555;
   font-family: "Courier New, Courier, monospace";

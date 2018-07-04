@@ -1,10 +1,9 @@
-@media screen and (max-width: 600px) {
-  
+@media screen and (max-width: 786px) {
   .main-container {
     width: 96vw;
-    height: 270vh;
+    height: fit-content;
   }
-  
+
   .dark-bg {
     height: 24.375rem;
     width: 100%;
@@ -15,15 +14,21 @@
   }
 
   .light-bg {
-    width: fit-content;
+    width: inherit;
     padding-right: 10px;
     padding-left: 10px;
-    height: inherit;
+    height: fit-content;
+  }
+
+  .text-container {
+    height: 6vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0vh;
   }
 
   .recomended-text {
     text-align: center;
-    margin-left: 1vw;
+    margin-left: 4vw;
     font-size: 1.8rem !important;
   }
 
@@ -33,12 +38,5 @@
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 2vh;
-  }
-
-  .text-container {
-    text-align: center;
-    height: 1.875rem;
-    margin-top: 0.625rem;
-    margin-bottom: 0.1875rem;
   }
 }

@@ -5,10 +5,11 @@
   height: 58vh;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 786px) {
   .movie-shelf-container {
     margin-top: 0px;
     height: fit-content;
+    width: inherit;
   }
 
   .row{

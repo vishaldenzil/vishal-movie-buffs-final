@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 786px) {
   .main-description-container {
     width: 100vw;
     height: max-content;
@@ -87,6 +87,7 @@
   .iframe{
     width: 86vw;
     height: 35vh;
+    margin-bottom: 5vh;
   }
   
 /* 
