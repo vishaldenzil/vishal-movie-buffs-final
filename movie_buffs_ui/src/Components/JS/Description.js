@@ -7,6 +7,7 @@ import Header from "./Header.js";
 import Reviews from "./Reviews.js";
 import {Redirect} from 'react-router-dom'
 import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
+import Loading from './Loading.js'
 import swal from 'sweetalert'
 export default class Description extends Component {
 
@@ -14,10 +15,10 @@ export default class Description extends Component {
     super();
     this.state = {
       Movies: {
-        movie: {}
+        movie: {},
+        loading: true
       }
     };
-    this.getMovie = this.getMovie.bind(this);
     this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
   }
 
@@ -32,19 +33,18 @@ export default class Description extends Component {
     }
   }
 
-  getMovie() {
+  componentDidMount() {
     let id = this.props.match.params.id;
     searchId(id).then(movie => {
-      this.setState({ Movies: movie });
+      this.setState({ Movies: movie, loading: false });
     });
-  }
-
-  componentDidMount() {
-    this.getMovie();
   }
   render() {
     if(!localStorage.sessionDetails) {
       return <Redirect to="/" />
+    }
+    if(this.state.loading) {
+      return <Loading />
     }
     let data = this.state;
     return (

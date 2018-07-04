@@ -11,7 +11,6 @@ export default class MoviePoster extends Component {
     super();
     this.state = {
       movie: {},
-      isToggleOn: true
     };
       this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
      
