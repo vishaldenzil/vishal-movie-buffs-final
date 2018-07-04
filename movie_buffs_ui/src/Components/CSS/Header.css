@@ -16,6 +16,22 @@
   margin-left: 5vw;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img.App-logo {
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .App-logo:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -25,7 +41,7 @@
   float: left;
   margin: 0px;
   padding: 0px;
-  margin-left: .1vw;
+  margin-left: 0.1vw;
   padding-top: 1.5vh;
   font-size: 2.375rem !important;
   font-weight: 555;
@@ -47,25 +63,24 @@ select:focus {
 }
 
 .nav-link {
-  float:right;
+  float: right;
   color: gray !important;
   font-size: 1.5rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-weight: bolder;
   font-family: cursive;
 }
 
 .nav-link:hover {
-  color: white!important;
+  color: white !important;
 }
 
-.search-icon{
+.search-icon {
   font-size: 1.5rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-weight: bolder;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-.drop-down
-{
-  width:5%;
+.drop-down {
+  width: 5%;
 }

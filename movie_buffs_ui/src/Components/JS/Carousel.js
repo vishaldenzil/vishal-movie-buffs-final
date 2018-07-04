@@ -29,7 +29,7 @@ class Carousel extends Component {
             i=0
         }
         catch(err){}
-      }, 5000)
+      }, 6000)
     }
 
   componentWillUnmount() {

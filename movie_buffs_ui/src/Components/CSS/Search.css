@@ -1,21 +1,92 @@
-.quick-search-input {
-  width: 250px;
-  height: 35px;
-  font-size: 0.85em;
-  font-weight: 700;
-  color: #919191;
-  border: 2px solid #333;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  padding: 4px 30px;
-  background: #1d1d1d url(https://yts.am/assets/images/website/icon-search.svg)
-    no-repeat 9px 8px;
-  margin-top: 17px;
-  float: right;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.react-autosuggest__container {
+  position: relative;
 }
 
-.quick-search-input:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+.react-autosuggest__input {
+  width: 280px;
+  height: 35px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
 }
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 38px;
+  width: 280px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.searchResult-text {
+  line-height: 21px;
+  overflow: hidden;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.searchResult-image {
+    width: 40px;
+    height: 50px;
+    float: left;
+    margin-right: 8px;
+}
+
+.searchResult-name {
+    font-weight: bold;
+}
+
+.searchResult-link {
+  display: block;
+  padding: 5px;
+}
+
+/*.search-container {
+  margin: 30px 0;
+  color: grey;
+  background: black;
+}
+// sm up
+@include media-breakpoint-up(sm) {
+  .search-container {
+    margin-top: 8px;
+  }
+}*/

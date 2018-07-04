@@ -40,7 +40,6 @@ def google_register_user(request):
             'age': fields['age'],
             'movies': {}
         }
-        print(data)
         try:
             db.child('users').child(fields['uid']).set(data)
             return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
