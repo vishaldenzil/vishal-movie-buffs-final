@@ -137,7 +137,7 @@ export default class Login extends Component {
                 New to MovieBuffs ?{" "}
                 <code>
                   <NavLink to="/register">
-                    register here...<i class="fas fa-user-plus" />
+                    register here...<i className="fas fa-user-plus" />
                   </NavLink>
                 </code>
               </h5>
