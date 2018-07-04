@@ -9,6 +9,8 @@ import {Redirect} from 'react-router-dom'
 import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
 import Loading from './Loading.js'
 import swal from 'sweetalert'
+import Footer from './Footer.js'
+
 export default class Description extends Component {
 
   constructor() {
@@ -127,6 +129,7 @@ export default class Description extends Component {
           Object.values(this.state.Movies.movie.reviews).map((reviewItem) => {
           return <Reviews reviews={{reviewItem}}></Reviews>
         })}
+        <Footer />
       </div>
     );
   }

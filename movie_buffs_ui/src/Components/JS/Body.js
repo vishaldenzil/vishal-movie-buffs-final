@@ -5,6 +5,7 @@ import "../CSS/body-responsive.css";
 import Carousel from "./Carousel.js";
 import MovieGrid from "./MovieGrid.js";
 import Loading from './Loading.js'
+import Footer from './Footer.js'
 
 class Body extends Component {
   constructor() {
@@ -33,6 +34,7 @@ class Body extends Component {
       return <Loading />
     }  
     return (
+      <div>
       <div className="main-container">
         <div className="container-fluid dark-bg hide">
           <div className="container dark-bg">
@@ -48,6 +50,8 @@ class Body extends Component {
             </div>
           </div>
         </div>
+        <Footer />
+      </div>
     );
   }
 }

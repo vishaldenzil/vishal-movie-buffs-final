@@ -4,6 +4,7 @@ import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
 import MovieGrid from "./MovieGrid";
 import {Redirect} from 'react-router-dom'
+import Footer from './Footer.js'
 
 export default class DashBoard extends Component {
     constructor() {
@@ -38,6 +39,7 @@ export default class DashBoard extends Component {
                 </div>
             </div>
          </div>
+         <Footer />
         </div>
       );
     }
