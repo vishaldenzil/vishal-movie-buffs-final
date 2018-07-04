@@ -15,7 +15,7 @@ class MovieGrid extends Component {
         const element = <div className="movie-shelf-container">
                             <div className="row">
                                 {this.props.movies && this.props.movies.map((movie) => {
-                                    return <MoviePoster key={movie} movie={movie} />
+                                    return <MoviePoster key={movie.imdbID} movie={movie} />
                                 })}
                             </div>
                         </div>

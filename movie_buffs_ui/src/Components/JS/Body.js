@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/Body.css";
-import { recommendedMovies } from "../../MoviesBuffsApi.js";
+import { recommendedMovies, upcomingMovies } from "../../MoviesBuffsApi.js";
 import "../CSS/body-responsive.css";
 import Carousel from "./Carousel.js";
 import MovieGrid from "./MovieGrid.js";
@@ -9,16 +9,20 @@ class Body extends Component {
   constructor() {
     super();
     this.state = {
-      recommendedMovies: []
+      recommendedMovies: [],
+      upcomingMovies: []
     };
   }
 
   componentDidMount() {
-    recommendedMovies(JSON.parse(localStorage.sessionDetails).localId)
-    .then((recommendedMovies) => {
-      this.setState({recommendedMovies: Object.values(recommendedMovies)})
+    Promise.all([recommendedMovies(JSON.parse(localStorage.sessionDetails).localId), upcomingMovies()])
+    .then((movies) => {
+      console.log(movies[0], movies[1])
+      this.setState({
+        recommendedMovies: Object.values(movies[0]),
+        upcomingMovies: Object.values(movies[1])
+      })
     });
-
   }
 
   render() {
@@ -26,7 +30,7 @@ class Body extends Component {
       <div className="main-container">
         <div className="container-fluid dark-bg hide">
           <div className="container dark-bg">
-            <Carousel i={true}/>
+            <Carousel upcomingMovies={this.state.upcomingMovies} />
           </div>
         </div>
           <div className="container-fluid light-bg">

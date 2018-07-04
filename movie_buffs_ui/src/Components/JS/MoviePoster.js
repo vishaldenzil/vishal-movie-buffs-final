@@ -16,7 +16,6 @@ export default class MoviePoster extends Component {
 
   getMovieDashBoard(imdb)
   {
-      console.log('asdjsagdjhgsahdgasjhdg')
       let id=JSON.parse(localStorage.sessionDetails).localId
       addUserMovie(id,imdb).then(console.log(true));
   }
@@ -38,14 +37,15 @@ export default class MoviePoster extends Component {
               <img
                 className="movie-cover"
                 src={this.state.movie.Poster && this.state.movie.Poster}
-                alt=""
+                alt={this.state.movie.Title}
               />
+              <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} className="fas fa-star star-position" />  
             </div>
-          </NavLink>
-          <i onClick={()=>this.getMovieDashBoard(this.state.movie.imdbID)} className="fas fa-star star-position" />
             <span className="middle">
               <h4>{this.state.movie.Title}</h4>
-            </span>         
+            </span>
+          </NavLink>
+                 
         </div>
       </div>
     );

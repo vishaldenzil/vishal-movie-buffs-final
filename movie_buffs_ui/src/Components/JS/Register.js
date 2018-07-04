@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { register } from "../../MoviesBuffsApi.js";
+import { register, recommendedMovies } from "../../MoviesBuffsApi.js";
 import { NavLink } from "react-router-dom";
 import "../CSS/Register.css";
 import "../CSS/register-responsive.css"
@@ -65,6 +65,7 @@ export default class Register extends Component {
     )
       .then(user => {
         this.props.history.push("/");
+        recommendedMovies(user['localId'])
       })
       .catch(error => {
         console.log(error);

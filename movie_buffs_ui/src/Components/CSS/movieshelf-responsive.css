@@ -1,4 +1,4 @@
-@media screen and (max-width: 786) {
+@media screen and (max-width: 600px) {
   .movie-shelf {
     /* padding: 0 10px 20px; */
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@media (min-width: 786px) {
+@media (max-width: 786px) {
   .movie-shelf {
     padding: 0 20px 40px;
   }

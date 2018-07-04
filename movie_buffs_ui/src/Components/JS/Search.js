@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../CSS/Search.css";
 
+
 export default class Search extends Component {
   render() {
     const element = (

@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../MoviesBuffsApi.js";
 import Header from "./Header.js";
 import "../CSS/Login.css";
-import "../CSS/login-responsive.css"
+import glogo from "../ICONS/gmail.png";
+import "../CSS/login-responsive.css";
 
 export default class Login extends Component {
   constructor() {
@@ -47,14 +48,14 @@ export default class Login extends Component {
   render() {
     const element = (
       <div>
-        <Header components={{Logout: false, Seacrh: false}}/>
+        <Header components={{ Logout: false, Seacrh: false }} />
         <div className="main-login-container">
           <div className="main-helper-container">
             <div className="login-container">
               <form>
-                <div class="input-group email">
-                  <span class="input-group-addon">
-                    <i class="far fa-user" />
+                <div className="input-group email">
+                  <span className="input-group-addon">
+                    <i className="far fa-user" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -64,9 +65,9 @@ export default class Login extends Component {
                     onChange={this.handleEmailChange}
                   />
                 </div>
-                <div class="input-group password">
-                  <span class="input-group-addon">
-                    <i class="fas fa-lock" />
+                <div className="input-group password">
+                  <span className="input-group-addon">
+                    <i className="fas fa-lock" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -80,17 +81,33 @@ export default class Login extends Component {
                   Login
                 </button>
               </form>
-              
+              <br/>
               <div className="online-login">
                 <h5 className="social-login-text">Login with Social</h5>
-                <div className="google-login" />
-                <div className="fb-login" />
+                {/* <div className="google-login">
+                  {/* <img
+                    className="gmail-logo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRriQckKDnX4sH0nzM89E6hlVOImUfrnXleF16G9aQ29LGlQ-A2Pg"
+                  /> */}
+                {/* <i class="fab fa-google-plus-square gmail-logo">
+                  <span className="google-login-text">Sign in with Google</span>
+                  </i>
+                </div>  */}
+                <div id="gSignInWrapper">
+                  {/* <span class="label">Sign in with:</span> */}
+                  <div id="customBtn" class="customGPlusSignIn">
+                    <span class="icon" />
+                    <span class="buttonText">Sign In with Google</span>
+                  </div>
+                </div>
               </div>
-              
+
               <h5 className="register-text">
                 New to MovieBuffs ?{" "}
                 <code>
-                  <NavLink to="/register">register here...<i class="fas fa-user-plus"></i></NavLink>
+                  <NavLink to="/register">
+                    register here...<i class="fas fa-user-plus" />
+                  </NavLink>
                 </code>
               </h5>
             </div>

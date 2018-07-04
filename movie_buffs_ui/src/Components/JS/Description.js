@@ -4,15 +4,32 @@ import "../CSS/description-responsive.css";
 import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
+import {Redirect} from 'react-router-dom'
+import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
 
 export default class Description extends Component {
+
   constructor() {
     super();
     this.state = {
       Movies: {}
     };
-
     this.getMovie = this.getMovie.bind(this);
+    this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
+  }
+
+  getMovieDashBoard(imdb)
+  {
+      if(imdb!=undefined)
+    {
+      let id=JSON.parse(localStorage.sessionDetails).localId
+      addUserMovie(id,imdb).then(console.log(true));
+      alert("added to DashBoard");
+    }
+    else
+    {
+      alert("Error in adding");
+    }
   }
 
   getMovie() {
@@ -27,6 +44,9 @@ export default class Description extends Component {
     this.getMovie();
   }
   render() {
+    if(!localStorage.sessionDetails) {
+      return <Redirect to="/" />
+    }
     let data = this.state;
     return (
       <div>
@@ -64,8 +84,20 @@ export default class Description extends Component {
                   {data.Movies.movie && data.Movies.movie.imdbRating}{" "}
                 </h4>
                 &nbsp;&nbsp;&nbsp;
-                <i class="fas fa-star imdb-star" />
+                <i onClick={()=>this.getMovieDashBoard(this.props.match.params.id)} class="fas fa-star imdb-star" />
               </div>
+              <div>
+                {" "}
+                <i className="far fa-money-bill-alt icon-size"></i>
+                <h4 className="rating-text">
+                  &nbsp;&nbsp;&nbsp;
+                  {data.Movies.movie && data.Movies.movie.BoxOffice}{" "}
+                </h4>
+                &nbsp;&nbsp;&nbsp;
+                
+              </div>
+
+
               <div>
                 <div className="height-bw-rating-plot" />
                 <h4 className="plot"> Plot </h4>

@@ -4,15 +4,30 @@
   margin-top: 0px;
   height: 58vh;
 }
+@media screen and (max-width: 932px) {
+  .movie-shelf-container {
+    margin-top: 0px;
+    height: fit-content;
+    width: 88vw;
+  }
 
-@media screen and (max-width: 786px) {
+  .row {
+    display: block;
+    margin: auto;
+    height: 140vh;
+    width: 88vw;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
   .movie-shelf-container {
     margin-top: 0px;
     height: fit-content;
     width: inherit;
   }
 
-  .row{
+  .row {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;

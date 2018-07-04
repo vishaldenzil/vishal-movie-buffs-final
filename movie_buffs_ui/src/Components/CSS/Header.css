@@ -1,5 +1,6 @@
 .Search-container {
   position: relative;
+  font-size: 70px;
 }
 
 .App-header {
@@ -63,4 +64,8 @@ select:focus {
   margin-top: .5rem;
   font-weight: bolder;
   margin-right: .5rem;
+}
+.drop-down
+{
+  width:5%;
 }

@@ -3,6 +3,8 @@ import "../CSS/DashBoard.css";
 import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
 import MovieGrid from "./MovieGrid";
+import {Redirect} from 'react-router-dom'
+
 export default class DashBoard extends Component {
     constructor() {
       super();
@@ -12,14 +14,19 @@ export default class DashBoard extends Component {
     }
 
     componentDidMount() {
-      let user_id=JSON.parse(localStorage.sessionDetails).localId
-      getUserMovies(user_id)
-      .then((movies) => {
+      let user_id=(JSON.parse(localStorage.sessionDetails).localId) ? (JSON.parse(localStorage.sessionDetails).localId) : null
+      if(user_id) {
+        getUserMovies(user_id)
+        .then((movies) => {
         this.setState({movies: Object.values(movies)});
       })
+      }
     }
   
     render() {
+      if(!localStorage.sessionDetails) {
+        return <Redirect to="/" />
+      }
       return (
         <div>
           <Header
