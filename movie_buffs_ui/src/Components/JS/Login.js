@@ -113,17 +113,25 @@ export default class Login extends Component {
               <br/>
               <div className="online-login">
                 <h5 className="social-login-text">Login with Social</h5>
-                <div>
-                  <button onClick={this.handleGoogleLogin}>
-                    Sign in with google
+              
+                  {/*}
+                {/* <div className="google-login">
+                  {/* <img
+                    className="gmail-logo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRriQckKDnX4sH0nzM89E6hlVOImUfrnXleF16G9aQ29LGlQ-A2Pg"
+                  /> */}
+                {/* <i class="fab fa-google-plus-square gmail-logo">
+                  <span className="google-login-text">Sign in with Google</span>
+                  </i>
+                </div>  */}
+                
+         
+                  <button id="customBtn" className="customGPlusSignIn" onClick={this.handleGoogleLogin}>
+                    <span className="icon" />
+                    <span className="buttonText">Sign In with Google</span>
                   </button>
-                <div id="gSignInWrapper">
-                  <div id="customBtn" class="customGPlusSignIn">
-                    <span class="icon" />
-                    <span class="buttonText">Sign In with Google</span>
-                  </div>
-                </div>
-              </div>
+                
+         
 
               <h5 className="register-text">
                 New to MovieBuffs ?{" "}
