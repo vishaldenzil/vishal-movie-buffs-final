@@ -1,4 +1,10 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1050px) {
+  .login-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
   a {
     font-size: 1rem;
     color: black;

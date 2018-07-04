@@ -6,6 +6,8 @@ import Header from "./Header.js";
 import "../CSS/Login.css";
 import "../CSS/login-responsive.css"
 import swal from 'sweetalert'
+import glogo from "../ICONS/gmail.png";
+import "../CSS/login-responsive.css";
 
 export default class Login extends Component {
   constructor() {
@@ -75,7 +77,7 @@ export default class Login extends Component {
   render() {
     const element = (
       <div>
-        <Header components={{Logout: false, Seacrh: false}}/>
+        <Header components={{ Logout: false, Seacrh: false }} />
         <div className="main-login-container">
           <div className="main-helper-container">
             <div className="login-container">
@@ -108,25 +110,33 @@ export default class Login extends Component {
                   Login
                 </button>
               </form>
-              
+              <br/>
               <div className="online-login">
                 <h5 className="social-login-text">Login with Social</h5>
                 <div>
                   <button onClick={this.handleGoogleLogin}>
                     Sign in with google
                   </button>
+                <div id="gSignInWrapper">
+                  <div id="customBtn" class="customGPlusSignIn">
+                    <span class="icon" />
+                    <span class="buttonText">Sign In with Google</span>
+                  </div>
                 </div>
               </div>
-              
+
               <h5 className="register-text">
                 New to MovieBuffs ?{" "}
                 <code>
-                  <NavLink to="/register">register here...<i class="fas fa-user-plus"></i></NavLink>
+                  <NavLink to="/register">
+                    register here...<i class="fas fa-user-plus" />
+                  </NavLink>
                 </code>
               </h5>
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
     return element;

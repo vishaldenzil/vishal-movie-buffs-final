@@ -1,9 +1,7 @@
-.movie-shelf {
-  /* padding: 0 10px 20px; */
-}
+  
 
 .movie-shelf {
-  height: 400px;
+  height: 60vh;
 }
 
 .movie-shelf-title {
