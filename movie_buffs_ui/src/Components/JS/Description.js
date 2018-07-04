@@ -126,7 +126,7 @@ export default class Description extends Component {
               />
             </div>
           </div>
-          <br />
+          {/*<br />
           <div className="user-reviews">
             <div className="review-main-text">
               <h2>User Reviews</h2>
@@ -154,12 +154,8 @@ export default class Description extends Component {
                   }
                 )}
             </div>
-          </div>
+          </div>*/}
         </div>
-        { this.state.Movies.movie.reviews !== undefined && 
-          Object.values(this.state.Movies.movie.reviews).map((reviewItem) => {
-          return <Reviews reviews={{reviewItem}}></Reviews>
-        })}
         <Footer />
       </div>
     );

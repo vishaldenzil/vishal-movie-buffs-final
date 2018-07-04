@@ -10,6 +10,10 @@
 }
 .align-footer {
     text-align: center;
-    margin:0% 30% 0% 30%;
+    margin:0% 25% 0% 25%;
     padding-top:1%; 
+}
+
+.trans:hover {
+	color: white;
 }
