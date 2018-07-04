@@ -32,14 +32,15 @@ def register(request):
 def google_register_user(request):
     if request.method == 'POST':
         fields = JSONParser().parse(request)
-        if db.child('users').child(fields['uid']):
-            return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
+        # if db.child('users').child(fields['uid']):
+        #     return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
         data = {
             'first_name': fields['first_name'],
             'last_name': fields['last_name'],
             'age': fields['age'],
             'movies': {}
         }
+        print(data)
         try:
             db.child('users').child(fields['uid']).set(data)
             return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)

@@ -6,7 +6,6 @@ import Header from "./Header.js";
 import "../CSS/Login.css";
 import "../CSS/login-responsive.css"
 import swal from 'sweetalert'
-import glogo from "../ICONS/gmail.png";
 import "../CSS/login-responsive.css";
 
 export default class Login extends Component {
@@ -62,7 +61,6 @@ export default class Login extends Component {
     firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      let token = result.credential.accessToken;
       let user = result.user;
       googleRegister(result)
       let sessionDetails = {

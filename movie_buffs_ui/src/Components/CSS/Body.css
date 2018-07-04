@@ -23,17 +23,18 @@
 } */
 
 .light-bg {
-  background: white;
+  background-color: rgba(0,0,0,0.6);
   color: black;
   height: 60vh;
 }
 
 .recomended-text {
+  color: white;
   float: left;
   margin: 0px;
   padding: 0px;
   margin-left: 1vw;
-  padding-top: 0px;
+  padding-top: 4px;
   font-size: 1.75rem !important;
   font-weight: 555;
   font-family: "Courier New", Courier, monospace;

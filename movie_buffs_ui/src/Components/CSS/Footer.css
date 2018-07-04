@@ -4,11 +4,12 @@
 }
 .App-footer
 {
+	margin-top: 2.3%;
   width:100%;
   height:78px;
   background-color: black;
 }
-.align-footer {
+.align-footer { 
     text-align: center;
     margin:0% 25% 0% 25%;
     padding-top:1%; 

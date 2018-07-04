@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/Footer.css";
-export default class Header extends Component {
-  constructor() {
-    super();
-
-  }
-
-  
+export default class Header extends Component {  
   render() {
     const element = (
       <div className="footer-container">

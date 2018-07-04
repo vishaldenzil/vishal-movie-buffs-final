@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { searchId } from "../../MoviesBuffsApi.js";
 import "../CSS/MoviePoster.css";
 import "../CSS/movieposter-responsive.css";
-import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
+import {addUserMovie} from "../../MoviesBuffsApi";
 import swal from 'sweetalert'
 
 export default class MoviePoster extends Component {

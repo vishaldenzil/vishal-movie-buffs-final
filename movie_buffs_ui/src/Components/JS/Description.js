@@ -4,9 +4,9 @@ import "../CSS/description-responsive.css";
 import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
-import Reviews from "./Reviews.js";
+// import Reviews from "./Reviews.js";
 import {Redirect} from 'react-router-dom'
-import {addUserMovie,getUserMovies } from "../../MoviesBuffsApi";
+import {addUserMovie} from "../../MoviesBuffsApi";
 import Loading from './Loading.js'
 import swal from 'sweetalert'
 import Footer from './Footer.js'
@@ -17,15 +17,15 @@ export default class Description extends Component {
     this.state = {
       Movies: {
         movie: {},
-        loading: true
-      }
+      },
+      loading: true
     };
     this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
   }
 
   getMovieDashBoard(imdb)
   {
-      if(imdb!=undefined)
+      if(imdb!==undefined)
       {
         let id=JSON.parse(localStorage.sessionDetails).localId
         addUserMovie(id,imdb).then( swal({
@@ -59,6 +59,7 @@ export default class Description extends Component {
               <img
                 className="description-img"
                 src={data.Movies.movie && data.Movies.movie.Poster}
+                alt=''
               />
             </div>
             <div className="column-2">
@@ -126,8 +127,8 @@ export default class Description extends Component {
               />
             </div>
           </div>
-          {/*<br />
-          <div className="user-reviews">
+          <br />
+          {/*<div className="user-reviews">
             <div className="review-main-text">
               <h2>User Reviews</h2>
             </div>
