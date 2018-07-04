@@ -1,9 +1,11 @@
+/*global firebase*/
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { login } from "../../MoviesBuffsApi.js";
+import { login, googleRegister } from "../../MoviesBuffsApi.js";
 import Header from "./Header.js";
 import "../CSS/Login.css";
 import "../CSS/login-responsive.css"
+import swal from 'sweetalert'
 
 export default class Login extends Component {
   constructor() {
@@ -15,6 +17,7 @@ export default class Login extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleGoogleLogin = this.handleGoogleLogin.bind(this)
   }
 
   handleEmailChange(event) {
@@ -32,16 +35,41 @@ export default class Login extends Component {
   handleLogin() {
     login(this.state.email, this.state.password)
       .then(user => {
-        let sessionDetails = {
-          localId: user.localId,
-          refreshToken: user.refreshToken
-        };
-        localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
-        this.props.history.push("/home");
+        if(user.Error) {
+          swal({
+            title: 'Please check again',
+            text: user.Error,
+          })
+        }
+        else {
+          let sessionDetails = {
+            localId: user.localId,
+            refreshToken: user.refreshToken
+          };
+          localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
+         this.props.history.push("/home");
+        }
       })
       .catch(error => {
         console.log(error);
       });
+  }
+
+  handleGoogleLogin() {
+    let provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      let token = result.credential.accessToken;
+      let user = result.user;
+      googleRegister(result)
+      let sessionDetails = {
+            localId: user.uid,
+            refreshToken: user.refreshToken
+          };
+          localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
+      this.props.history.push("/home")
+    })
   }
 
   render() {
@@ -83,8 +111,11 @@ export default class Login extends Component {
               
               <div className="online-login">
                 <h5 className="social-login-text">Login with Social</h5>
-                <div className="google-login" />
-                <div className="fb-login" />
+                <div>
+                  <button onClick={this.handleGoogleLogin}>
+                    Sign in with google
+                  </button>
+                </div>
               </div>
               
               <h5 className="register-text">

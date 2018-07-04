@@ -9,7 +9,9 @@
     "react-iframe": "^1.2.0",
     "react-native-fit-image": "^1.5.4",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "sweetalert": "^2.1.0",
+    "sweetalert-react": "^0.4.11"
   },
   "scripts": {
     "start": "react-scripts start",

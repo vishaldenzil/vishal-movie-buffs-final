@@ -21,19 +21,50 @@ def register(request):
             user = auth.create_user_with_email_and_password(fields['email'], fields['password'])
             db.child('users').child(user['localId']).set(data)
             return JsonResponse(user, status=status.HTTP_201_CREATED, safe=False)
-        except Exception as e:
-            return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST, safe=False)
+        except requests.HTTPError as e:
+            response = e.args[0].response
+            error_message = response.json()['error']['errors'][0]['message']
+            error_status = {"Error": error_message}
+            return JsonResponse(error_status, status=status.HTTP_400_BAD_REQUEST, safe=False)
+
+
+@csrf_exempt
+def google_register_user(request):
+    if request.method == 'POST':
+        fields = JSONParser().parse(request)
+        data = {
+            'first_name': fields['first_name'],
+            'last_name': fields['last_name'],
+            'age': fields['age'],
+            'movies': {}
+        }
+        try:
+            db.child('users').child(fields['uid']).set(data)
+            return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
+        except requests.HTTPError as e:
+            print(e)
+            response = e.args[0].response
+            error_message = response.json()['error']['errors'][0]['message']
+            error_status = {"Error": error_message}
+            return JsonResponse(error_status, status=status.HTTP_400_BAD_REQUEST, safe=False)
 
 
 @csrf_exempt
 def login(request):
     if request.method == 'POST':
-        data = JSONParser().parse(request)
+        fields = JSONParser().parse(request)
+        data = {
+            'email': fields['email'],
+            'password': fields['password']
+        }
         try:
             user = auth.sign_in_with_email_and_password(data['email'], data['password'])
             return JsonResponse(user, status=status.HTTP_200_OK, safe=False)
         except Exception as e:
-            return JsonResponse(e, status=status.HTTP_400_BAD_REQUEST, safe=False)
+            response = e.args[0].response
+            error_message = response.json()['error']['errors'][0]['message']
+            error_status = {"Error": error_message}
+            return JsonResponse(error_status, status=status.HTTP_400_BAD_REQUEST, safe=False)
 
 
 @csrf_exempt

@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import "../CSS/Register.css";
 import "../CSS/register-responsive.css"
 import Header from "./Header.js";
+import swal from 'sweetalert'
 
 
 export default class Register extends Component {
@@ -64,12 +65,17 @@ export default class Register extends Component {
       this.state.password
     )
       .then(user => {
-        this.props.history.push("/");
-        recommendedMovies(user['localId'])
+        if(user.Error){
+          swal({
+            title: 'Please check again',
+            text: user.Error,
+          })
+        }
+        else {
+          this.props.history.push("/");
+          recommendedMovies(user['localId'])
+        }
       })
-      .catch(error => {
-        console.log(error);
-      });
   }
 
   render() {
@@ -82,9 +88,9 @@ export default class Register extends Component {
           <div className="register-helper-container">
             <div className="login-container">
               <form>
-                <div class="input-group input-text-margin">
-                  <span class="input-group-addon-register">
-                    <i class="far fa-user" />
+                <div className="input-group input-text-margin">
+                  <span className="input-group-addon-register">
+                    <i className="far fa-user" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -94,9 +100,9 @@ export default class Register extends Component {
                     onChange={this.handleFirstNameChange}
                   />
                 </div>
-                <div class="input-group input-text-margin">
-                  <span class="input-group-addon-register">
-                    <i class="far fa-user" />
+                <div className="input-group input-text-margin">
+                  <span className="input-group-addon-register">
+                    <i className="far fa-user" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -106,9 +112,9 @@ export default class Register extends Component {
                     onChange={this.handleLastNameChange}
                   />
                 </div>
-                <div class="input-group input-text-margin">
-                  <span class="input-group-addon-register">
-                    <i class="far fa-user" />
+                <div className="input-group input-text-margin">
+                  <span className="input-group-addon-register">
+                    <i className="far fa-user" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -118,9 +124,9 @@ export default class Register extends Component {
                     onChange={this.handleAgeChange}
                   />
                 </div>
-                <div class="input-group input-text-margin">
-                  <span class="input-group-addon-register">
-                    <i class="fas fa-envelope-square" />
+                <div className="input-group input-text-margin">
+                  <span className="input-group-addon-register">
+                    <i className="fas fa-envelope-square" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -130,9 +136,9 @@ export default class Register extends Component {
                     onChange={this.handleEmailChange}
                   />
                 </div>
-                <div class="input-group input-text-margin">
-                  <span class="input-group-addon-register">
-                    <i class="fas fa-lock" />
+                <div className="input-group input-text-margin">
+                  <span className="input-group-addon-register">
+                    <i className="fas fa-lock" />
                   </span>
                   <input
                     className="form-control height-width"
@@ -148,9 +154,9 @@ export default class Register extends Component {
               </form>
               <div className="back-to-sign-in">
                 <NavLink to="/">
-                  <span class="dn dib-l v-mid mr1">
+                  <span className="dn dib-l v-mid mr1">
                     back to Sign In page
-                    <i class="fas fa-sign-in-alt signin-icon" />
+                    <i className="fas fa-sign-in-alt signin-icon" />
                   </span>
                 </NavLink>
               </div>

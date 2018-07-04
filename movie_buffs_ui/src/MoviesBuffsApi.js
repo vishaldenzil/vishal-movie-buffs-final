@@ -96,3 +96,15 @@ export const upcomingMovies = () => {
 		return response.json()
 	})
 }
+
+export const googleRegister = (user) => {
+	return fetch(`${api}/user/google_register/`, {
+		method: 'POST',
+		body: JSON.stringify({
+			'uid': user.user.uid,
+			'first_name': user.additionalUserInfo.profile.given_name,
+      		'last_name': user.additionalUserInfo.profile.family_name,
+      		'age': 22
+		})
+	})
+}
