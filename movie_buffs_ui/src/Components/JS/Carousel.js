@@ -22,13 +22,13 @@ class Carousel extends Component {
             </ul>
             <div className="carousel-inner carasole-width">
                 <div className="carousel-item active custom-carousel-item">
-                    <MovieGrid movies={this.props.upcomingMovies} />
+                    <MovieGrid movies={this.props.upcomingMovies.splice(0,4)} />
                 </div>
                 <div className="carousel-item custom-carousel-item">
-                    <MovieGrid movies={this.props.upcomingMovies} />
+                    <MovieGrid movies={this.props.upcomingMovies.splice(0,4)} />
                 </div>
                 <div className="carousel-item custom-carousel-item">
-                    <MovieGrid movies={this.props.upcomingMovies} />
+                    <MovieGrid movies={this.props.upcomingMovies.splice(0,4)} />
                 </div>
             </div>
       </div>
