@@ -7,12 +7,20 @@ from .firebase_config import db
 from urllib import request as req
 import re
 
+constants = {
+    'omdb_api': 'http://www.omdbapi.com/?apikey=b467032&',
+    'tmdb_api': 'https://api.themoviedb.org/3/movie/popular/?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&',
+    'youtube_search': 'https://www.youtube.com/results?search_query=',
+    'youtube_embed': 'https://www.youtube.com/embed/'
+}
 
+
+@csrf_exempt
 def get_trailer_youtube_url(title):
     title = title.replace(' ', '+') + '+trailer'
-    html_content = req.urlopen("http://www.youtube.com/results?search_query=" + title)
+    html_content = req.urlopen(constants['youtube_search'] + title)
     search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
-    trailer_youtube_url = "http://www.youtube.com/embed/" + str(search_results[0])
+    trailer_youtube_url = constants['youtube_embed'] + str(search_results[0])
     return trailer_youtube_url
 
 
@@ -23,7 +31,7 @@ def search_by_id(request):
         movie = db.child('movies').child(imdb_id).get().val()
         if movie:
             return JsonResponse({'movie': movie}, status=status.HTTP_200_OK, safe=False)
-        movie = requests.get("http://www.omdbapi.com/?apikey=b467032&i=" + imdb_id).json()
+        movie = requests.get(constants['omdb_api'] + "i=" + imdb_id).json()
         trailer_youtube_url = get_trailer_youtube_url(movie['Title'])
         movie['trailer'] = trailer_youtube_url
         db.child('movies').child(imdb_id).set(movie)
@@ -34,7 +42,7 @@ def search_by_id(request):
 def search_by_title(request):
     if request.method == 'GET':
         title = request.GET.get('title', '')
-        movies = requests.get("http://www.omdbapi.com/?apikey=b467032&s=" + title)
+        movies = requests.get(constants['omdb_api'] + "s=" + title)
         return JsonResponse(movies.json()['Search'], status=status.HTTP_200_OK, safe=False)
 
 
@@ -45,14 +53,12 @@ def get_upcoming_movies(request):
         if upcoming_movies:
             return JsonResponse(upcoming_movies, status=status.HTTP_200_OK, safe=False)
 
-        movies = requests.get(
-            'https://api.themoviedb.org/3/movie/upcoming?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&page=1'
-        ).json()['results']
+        movies = requests.get(constants['tmdb_api'] + 'page=1').json()['results']
         upcoming_movies = dict()
         for movie in movies:
             try:
                 movies_per_search_term = \
-                    requests.get("http://www.omdbapi.com/?apikey=b467032&s=" + movie['original_title']).json()[
+                    requests.get(constants['omdb_api'] + "s=" + movie['original_title']).json()[
                         'Search']
                 for searched_movie in movies_per_search_term:
                     if searched_movie['Year'] == '2018':

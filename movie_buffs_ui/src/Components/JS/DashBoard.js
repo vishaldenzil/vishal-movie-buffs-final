@@ -33,11 +33,7 @@ export default class DashBoard extends Component {
           <Header
             components={{ logout: true, search: false, browseMovies: true }}/>
           <div className="main-container-for-search-page">
-             {/*<div className="container-fluid light-bg">
-                <div className="container size">*/}
-                    <MovieGrid movies={this.state.movies} />
-                {/*</div>
-            </div>*/}
+            <MovieGrid movies={this.state.movies} />
          </div>
          <Footer />
         </div>

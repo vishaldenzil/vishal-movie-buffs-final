@@ -35,39 +35,38 @@ export default class Login extends Component {
 
   handleLogin() {
     login(this.state.email, this.state.password)
-      .then(user => {
-        if(user.Error) {
-          swal({
-            title: 'Please check again',
-            text: user.Error,
-          })
-        }
-        else {
-          let sessionDetails = {
-            localId: user.localId,
-            refreshToken: user.refreshToken
-          };
-          localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
-         this.props.history.push("/home");
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    .then(user => {
+      if(user.Error) {
+        swal({
+          title: 'Please check again',
+          text: user.Error,
+        })
+      }
+      else {
+        let sessionDetails = {
+          localId: user.localId,
+          refreshToken: user.refreshToken
+        };
+        localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
+       this.props.history.push("/home");
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   handleGoogleLogin() {
     let provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth()
-    .signInWithPopup(provider)
+    firebase.auth().signInWithPopup(provider)
     .then((result) => {
       let user = result.user;
       googleRegister(result)
       let sessionDetails = {
-            localId: user.uid,
-            refreshToken: user.refreshToken
-          };
-          localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
+        localId: user.uid,
+        refreshToken: user.refreshToken
+      };
+      localStorage.setItem("sessionDetails", JSON.stringify(sessionDetails));
       this.props.history.push("/home")
     })
   }
@@ -110,27 +109,11 @@ export default class Login extends Component {
               </form>
               <br/>
               <div className="online-login">
-                <h5 className="social-login-text">Login with Social</h5>
-              
-                  {/*}
-                {/* <div className="google-login">
-                  {/* <img
-                    className="gmail-logo"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRriQckKDnX4sH0nzM89E6hlVOImUfrnXleF16G9aQ29LGlQ-A2Pg"
-                  /> */}
-                {/* <i class="fab fa-google-plus-square gmail-logo">
-                  <span className="google-login-text">Sign in with Google</span>
-                  </i>
-                </div>  */}
-                
-         
+                <h5 className="social-login-text">Login with Social</h5>              
                   <button id="customBtn" className="customGPlusSignIn" onClick={this.handleGoogleLogin}>
                     <span className="icon" />
                     <span className="buttonText">Sign In with Google</span>
-                  </button>
-                
-         
-
+                  </button>        
               <h5 className="register-text">
                 New to MovieBuffs ?{" "}
                 <code>
