@@ -52,7 +52,6 @@ def get_upcoming_movies(request):
         upcoming_movies = db.child('upcoming_movies').get().val()
         if upcoming_movies:
             return JsonResponse(upcoming_movies, status=status.HTTP_200_OK, safe=False)
-
         movies = requests.get(constants['tmdb_api'] + 'page=1').json()['results']
         upcoming_movies = dict()
         for movie in movies:
