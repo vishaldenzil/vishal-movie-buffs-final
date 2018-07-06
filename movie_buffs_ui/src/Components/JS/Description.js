@@ -114,7 +114,7 @@ export default class Description extends Component {
           <div className="iframe-container">
             <div class="iframe">
               <Iframe
-                url={data.Movies.movie && data.Movies.movie.trailer}
+                url={data.Movies.movie && data.Movies.movie.trailer.replace('http://', 'https://')}
                 width="100%"
                 height="100%"
                 id="myId"

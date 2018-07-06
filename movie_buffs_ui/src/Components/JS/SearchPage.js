@@ -12,7 +12,8 @@ export default class SearchItem extends Component {
   constructor() {
     super();
     this.state = {
-      MovieSearch: []
+      MovieSearch: [],
+      error: ''
     };
     this.getMovieSearch = this.getMovieSearch.bind(this);
   }
@@ -22,9 +23,13 @@ export default class SearchItem extends Component {
     if (title.length === 0) {
       this.setState({ MovieSearch: [] });
     } else {
-      searchTitle(title).then(movie => {
-        this.setState({ MovieSearch: movie });
-      });
+      searchTitle(title)
+      .then(movie => {  
+        this.setState({ MovieSearch: movie, error: '' });
+      })
+      .catch(() => {
+        this.setState({ MovieSearch: [], error: "No movies found" })
+      })
     }
   }
 
@@ -51,6 +56,9 @@ export default class SearchItem extends Component {
                   debounceTimeout={500}
                   onChange={event => this.getMovieSearch(event)}
                 />
+              </div>
+              <div className="error-message">
+                <span>{this.state.error}</span>
               </div>
               {this.state.MovieSearch.map((movie) => {
                 if (movie.Poster !== "N/A" && movie.Poster !== " ") {
