@@ -25,11 +25,14 @@
     height: 28rem;
 }
 
+
 .iframe-container {
-    display: grid;
-    grid-template-columns: 8% 84% 8%;
-    grid-template-rows: 85% 15%;
+  display: grid;
+  grid-template-columns: 8% 84% 8%;
+  grid-template-rows: 85% 15%;
 }
+
+
 
 .desc-img {
     height: 288px;
@@ -92,11 +95,12 @@
 }
 
 .rating-text {
-    display: inline;
-    font-weight: bolder;
-    font-size: 150%;
-    font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
-    letter-spacing: -0.03em;
+  display: inline;
+  font-weight: bolder;
+  font-size: 150%;
+  font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
+  letter-spacing: -0.03em;
+  padding:2%;
 }
 
 .height-bw-name-year {
