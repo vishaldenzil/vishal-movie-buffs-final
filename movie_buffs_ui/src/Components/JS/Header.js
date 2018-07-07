@@ -34,23 +34,22 @@ export default class Header extends Component {
                             <i class="fas fa-caret-down drop-down-arrow"></i>
                         </span>
                         <div className="dropdown-content">
-                            <a href="#">Dashboard</a>
-                            <a href="#">User Profile</a>
-                            <a href="#">Logout</a>
+                            <NavLink to="/dashboard">Dashboard</NavLink>
+                            <NavLink to="/dashboard">User Profile</NavLink>
+                            <NavLink to="/dashboard">Logout</NavLink>
                         </div>
-
-                        </div>
+                    </div>
                 </NavLink>
-                    <NavLink to='#' className="nav-link"> |</NavLink>
-                    <NavLink className="nav-link hearder-containt-text" to="/search">Browse movies   </NavLink>
+                <span style={{'color':'white'}}className="nav-link"> |</span>
+                <NavLink className="nav-link hearder-containt-text" to="/search">Browse movies   </NavLink>
             </div>
         </div>
-            return element
-        }
+        return element
     }
-    
-    
-    
+}
+
+
+
     // const element = (
 //   <div className="Search-container">
 //   <header className="App-header">
