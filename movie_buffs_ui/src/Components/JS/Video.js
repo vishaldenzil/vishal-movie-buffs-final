@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Iframe from "react-iframe";
-import "../CSS/Video.css";
+import "../CSS/video.css";
 export default class Header extends Component {
     render() {
         const element = (

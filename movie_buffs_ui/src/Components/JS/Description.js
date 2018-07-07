@@ -48,7 +48,7 @@ export default class Description extends Component {
                         </div>
                         <Details data={data} />
                     </div>
-                        <Video data={data} />
+                    <Video data={data} />
                 </div>
                 <Footer />
             </div>
