@@ -1,4 +1,3 @@
-/* https://images.alphacoders.com/596/596931.jpg */
 
 .search-box {
   width: 100%;
@@ -37,3 +36,24 @@ input[type="password"] {
   margin: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+
+@media screen and (max-width: 932px) {
+  .main-container-for-search-page {
+    width: 100vw;
+    height: max-content;
+    min-height: 100vh;
+    box-shadow: unset;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .main-container-for-search-page {
+    width: 100vw;
+    height: max-content;
+    min-height: 100vh;
+    box-shadow: unset;
+  }
+}
+

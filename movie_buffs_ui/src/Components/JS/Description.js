@@ -5,34 +5,34 @@ import Iframe from "react-iframe";
 import { searchId } from "../../MoviesBuffsApi";
 import Header from "./Header.js";
 // import Reviews from "./Reviews.js";
-import {Redirect} from 'react-router-dom'
-import {addUserMovie} from "../../MoviesBuffsApi";
-import Loading from './Loading.js'
-import swal from 'sweetalert'
-import Footer from './Footer.js'
+import { Redirect } from "react-router-dom";
+import { addUserMovie } from "../../MoviesBuffsApi";
+import Loading from "./Loading.js";
+import swal from "sweetalert";
+import Footer from "./Footer.js";
 
 export default class Description extends Component {
   constructor() {
     super();
     this.state = {
       Movies: {
-        movie: {},
+        movie: {}
       },
       loading: true
     };
     this.getMovieDashBoard = this.getMovieDashBoard.bind(this);
   }
 
-  getMovieDashBoard(imdb)
-  {
-      if(imdb!==undefined)
-      {
-        let id=JSON.parse(localStorage.sessionDetails).localId
-        addUserMovie(id,imdb).then( swal({
-          title: 'Added to Dashboard ',
-      }));
-      }
+  getMovieDashBoard(imdb) {
+    if (imdb !== undefined) {
+      let id = JSON.parse(localStorage.sessionDetails).localId;
+      addUserMovie(id, imdb).then(
+        swal({
+          title: "Added to Dashboard "
+        })
+      );
     }
+  }
 
   componentDidMount() {
     let id = this.props.match.params.id;
@@ -44,8 +44,8 @@ export default class Description extends Component {
     if (!localStorage.sessionDetails) {
       return <Redirect to="/" />;
     }
-    if(this.state.loading) {
-      return <Loading />
+    if (this.state.loading) {
+      return <Loading />;
     }
     let data = this.state;
     return (
@@ -59,7 +59,7 @@ export default class Description extends Component {
               <img
                 className="description-img"
                 src={data.Movies.movie && data.Movies.movie.Poster}
-                alt=''
+                alt=""
               />
             </div>
             <div className="column-2">
@@ -111,22 +111,20 @@ export default class Description extends Component {
               </div>
             </div>
           </div>
-          <div className="iframe-container">
-            <div class="iframe">
+          {/* <div className="iframe-container"> */}
+            <div class="video-container">
               <Iframe
-                url={data.Movies.movie && data.Movies.movie.trailer.replace('http://', 'https://')}
-                width="100%"
-                height="100%"
-                id="myId"
-                className="myClassname"
-                display="initial"
-                position="relative"
-                frameborder="5px"
+                url={
+                  data.Movies.movie &&
+                  data.Movies.movie.trailer.replace("http://", "https://")
+                }
+                width="94%"
+                frameborder="1px"
                 allowFullScreen
                 ng-show="showvideo"
               />
             </div>
-          </div>
+          {/* </div> */}
           <br />
           {/*<div className="user-reviews">
             <div className="review-main-text">

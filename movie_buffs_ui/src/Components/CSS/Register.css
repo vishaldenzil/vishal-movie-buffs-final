@@ -1,53 +1,63 @@
 .main-register-container {
-  background-image: linear-gradient(to right, #000 40%, transparent 58%),
-    url("https://monstersofgeek.files.wordpress.com/2015/04/superhero-collage.jpg");
-  background-position: right top;
-  font-size: 16px;
-  height: 92.7vh;
-  width: 100%;  
+    background-image: linear-gradient(to right, #000 40%, transparent 58%), url("https://monstersofgeek.files.wordpress.com/2015/04/superhero-collage.jpg");
+    background-position: right top;
+    font-size: 16px;
+    height: 92.7vh;
+    width: 100%;
 }
 
 .register-helper-container {
-  width: 100%;
-  height: inherit;
-  display: grid;
-  grid-template-rows: 3% 97%;
-  grid-template-columns: 5% 95%;
+    width: 100%;
+    height: inherit;
+    display: grid;
+    grid-template-rows: 3% 97%;
+    grid-template-columns: 5% 95%;
 }
 
-
 .input-text-margin {
-  height: 7vh;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
+    height: 7vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 .form-control {
-  background-color: #262626 !important;
+    background-color: #262626 !important;
 }
 
 .input-group-addon-register {
-  padding: 0.375rem 0.75rem;
-  margin-bottom: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  text-align: center;
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  font-size: 125%;
-  font-weight: 600;
-  color: #000;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-size: 125%;
+    font-weight: 600;
+    color: #000;
 }
 
 .back-to-sign-in {
-  font-size: 13px !important;
-
+    font-size: 13px !important;
 }
 
-.signin-icon{
+.signin-icon {
     margin-left: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    a {
+        color: black;
+        letter-spacing: 0.1rem;
+        font-size: 1.1rem;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    }
+    .main-register-container {
+        background-image: linear-gradient(to right, #000 0%, transparent 58%), url("https://monstersofgeek.files.wordpress.com/2015/04/superhero-collage.jpg");
+        background-position: right top;
+    }
 }
