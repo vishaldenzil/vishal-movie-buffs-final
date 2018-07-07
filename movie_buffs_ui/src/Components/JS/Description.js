@@ -24,7 +24,6 @@ export default class Description extends Component {
         this.clickHandler=this.clickHandler.bind(this);
     }
 
-
     componentDidMount() {
         searchId(this.props.match.params.id).then(movie => {
             this.setState({ movie: movie, loading: false });
@@ -56,8 +55,7 @@ export default class Description extends Component {
                     </div>
                     <Video data={data} />
                     <Reviews reviews={(this.state.movie.movie.reviews) ? 
-                        (this.state.movie.movie.reviews) : {}} imdbId={this.props.match.params.id} method={this.clickHandler}/>
-                </div>
+                        (this.state.movie.movie.reviews) : {}} imdbId={this.props.match.params.id} method={this.clickHandler}/>                </div>
                 <Footer />
             </div>
         return element;
