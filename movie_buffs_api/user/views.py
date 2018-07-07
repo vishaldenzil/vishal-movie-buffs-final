@@ -6,6 +6,11 @@ from .firebase_config import db, auth
 import random
 import requests
 
+constants = {
+    'omdb_api': 'http://www.omdbapi.com/?apikey=b467032&',
+    'tmdb_api': 'https://api.themoviedb.org/3/movie/popular/?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&'
+}
+
 
 @csrf_exempt
 def register(request):
@@ -32,13 +37,12 @@ def register(request):
 def google_register_user(request):
     if request.method == 'POST':
         fields = JSONParser().parse(request)
-        # if db.child('users').child(fields['uid']):
-        #     return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
+        if db.child('users').child(fields['uid']):
+            return JsonResponse({}, status=status.HTTP_201_CREATED, safe=False)
         data = {
             'first_name': fields['first_name'],
             'last_name': fields['last_name'],
             'age': fields['age'],
-            'movies': {}
         }
         try:
             db.child('users').child(fields['uid']).set(data)
@@ -97,7 +101,7 @@ def add_user_movie(request):
             if db.child('movies').child(imdb_id).get().val():
                 movie = db.child('movies').child(imdb_id).get().val()
             else:
-                movie = requests.get("http://www.omdbapi.com/?apikey=b467032&i=" + imdb_id).json()
+                movie = requests.get(constants['omdb_api'] + 'i=' + imdb_id).json()
             db.child('users').child(user_id).child('movies').child(imdb_id).set(movie)
             return JsonResponse({'added movie': True}, status=status.HTTP_200_OK, safe=False)
         except Exception as e:
@@ -116,14 +120,12 @@ def get_recommended_movies(request):
             pages.append(p)
         page = str(random.choice(pages))
         try:
-            tmdb_movies = random.sample(requests.get(
-                'https://api.themoviedb.org/3/movie/popular/?api_key=f7048614c1bd3c0ecba329bc8d08bdbc&language=en-US&page=' + page).json()[
-                              'results'], 4)
+            tmdb_movies = random.sample(requests.get(constants['tmdb_api'] + 'page=' + page).json()['results'], 4)
             recommended_movies = dict()
             for movie in tmdb_movies:
                 try:
                     movies_per_search_term = \
-                        requests.get("http://www.omdbapi.com/?apikey=b467032&s=" + movie['original_title']).json()[
+                        requests.get(constants['omdb_api'] + "s=" + movie['original_title']).json()[
                             'Search']
                     for searched_movie in movies_per_search_term:
                         if len(recommended_movies.keys()) >= 4:

@@ -111,7 +111,6 @@ export default class Description extends Component {
               </div>
             </div>
           </div>
-          {/* <div className="iframe-container"> */}
             <div class="video-container">
               <Iframe
                 url={
@@ -124,36 +123,6 @@ export default class Description extends Component {
                 ng-show="showvideo"
               />
             </div>
-          {/* </div> */}
-          <br />
-          {/*<div className="user-reviews">
-            <div className="review-main-text">
-              <h2>User Reviews</h2>
-            </div>
-            <div className="user-review-input">
-              <div className="input-group email">
-                <input
-                  className="form-control height-width"
-                  type="text"
-                  placeholder="Add Review.."
-                  value={this.state.email}
-                  onChange={this.handleEmailChange}
-                />
-                <span className="input-group-addon-for-review ">
-                <i class="fas fa-marker add-review"></i>
-                </span>
-              </div>
-            </div>
-
-            <div className="container-for-reviews">
-              {this.state.Movies.movie.reviews !== undefined &&
-                Object.values(this.state.Movies.movie.reviews).map(
-                  reviewItem => {
-                    return <Reviews reviews={{ reviewItem }} />;
-                  }
-                )}
-            </div>
-          </div>*/}
         </div>
         <Footer />
       </div>
