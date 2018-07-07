@@ -1,0 +1,13 @@
+.iframe {
+    box-sizing: border-box;
+    grid-column: 2;
+    grid-row: 1;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    margin: auto;
+    width: 100%;
+    height: 60vh;
+    border: 8px solid gray;
+    border-radius: 5px;
+    padding: 0px;
+  }

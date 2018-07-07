@@ -29,25 +29,14 @@
   height: 28rem;
 }
 
+
 .iframe-container {
   display: grid;
   grid-template-columns: 8% 84% 8%;
   grid-template-rows: 85% 15%;
 }
 
-.iframe {
-  box-sizing: border-box;
-  grid-column: 2;
-  grid-row: 1;
-  /* margin-left: 5%;
-  margin-right: 5%; */
-  margin: auto;
-  width: 100%;
-  height: 60vh;
-  border: 8px solid gray;
-  border-radius: 5px;
-  padding: 0px;
-}
+
 
 .desc-img {
   height: 288px;
@@ -122,6 +111,7 @@
   font-size: 150%;
   font-family: Arimo, Arial, Helvetica, lucida grande, sans-serif;
   letter-spacing: -0.03em;
+  padding:2%;
 }
 
 .height-bw-name-year {

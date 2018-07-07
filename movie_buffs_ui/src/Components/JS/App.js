@@ -5,7 +5,7 @@ import Login from "./Login.js";
 import Register from "./Register.js";
 import Home from "./Home.js";
 import Description from "./Description.js";
-import SearchPage from "./SearchPage.js";
+import Search from "./Search.js";
 import Dashboard from "./DashBoard"
 
 export default class App extends Component {
@@ -18,7 +18,7 @@ export default class App extends Component {
           <Route path="/register" component={Register} exact />
           <Route path="/home" component={Home} exact />
           <Route path="/desc/:id" component={Description} exact />
-          <Route path="/search" component={SearchPage} exact />
+          <Route path="/search" component={Search} exact />
           <Route path="/dashboard" component={Dashboard} exact />
         </Switch>
       </BrowserRouter>
