@@ -9,27 +9,32 @@ import Loading from './Loading.js'
 import swal from 'sweetalert'
 import Footer from './Footer.js'
 import Video from './Video.js'
-import Details from './Details'
+import Details from './Details.js'
+import Reviews from './Reviews.js'
 
 export default class Description extends Component {
     constructor() {
         super();
-        this.state =
-            {
-                Movies: {
-                    movie: {},
-                },
-                loading: true
-            };
+        this.state = {
+            movie: {
+                movie: {},
+            },
+            loading: true
+        };
+        this.clickHandler=this.clickHandler.bind(this);
     }
 
 
     componentDidMount() {
-        let id = this.props.match.params.id;
-        searchId(id).then(movie => {
-            this.setState({ Movies: movie, loading: false });
+        searchId(this.props.match.params.id).then(movie => {
+            this.setState({ movie: movie, loading: false });
         });
     }
+
+    clickHandler() {
+        this.componentDidMount();
+    }
+    
     render() {
         if (!localStorage.sessionDetails) {
             return <Redirect to="/" />;
@@ -37,7 +42,7 @@ export default class Description extends Component {
         if (this.state.loading) {
             return <Loading />;
         }
-        let data = this.state.Movies.movie;
+        let data = this.state.movie.movie;
         const element =
             <div>
                 <Header components={{ logout: true, search: true, browseMovies: true }} />
@@ -49,13 +54,12 @@ export default class Description extends Component {
                         </div>
                         <Details data={data} />
                     </div>
-                        <Video data={data} />
+                    <Video data={data} />
+                    <Reviews reviews={(this.state.movie.movie.reviews) ? 
+                        (this.state.movie.movie.reviews) : {}} imdbId={this.props.match.params.id} method={this.clickHandler}/>
                 </div>
                 <Footer />
             </div>
         return element;
     }
 }
-
-
-
