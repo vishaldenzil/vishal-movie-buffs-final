@@ -45,7 +45,6 @@ export default class MoviePoster extends Component {
                 src={this.state.movie.Poster && this.state.movie.Poster}
                 alt={this.state.movie.Title}
               />
-              
             </div>
             </NavLink>
             <span className="middle">

@@ -1,3 +1,28 @@
+.dropdown-menu {
+  z-index: 1;
+}
+
+.caret {
+  font-size: 12px;
+}
+
+.nav-text { 
+  font-size: 80%;
+}
+
+.nav-item {
+  padding-left: 1%; 
+}
+
+.no-btn {
+  background-color: transparent;
+}
+
+.nav-float {
+  display: inline-block;
+  margin-right: 5vw;
+}
+
 .Search-container {
   position: relative;
   font-size: 70px;
