@@ -1,36 +1,68 @@
-// import React, { Component } from "react";
-// import { addReview } from "../../MoviesBuffsApi.js";
-// import "../CSS/Reviews.css";
+import React, { Component } from "react";
+import { addReview } from "../../MoviesBuffsApi.js";
+import "../CSS/Reviews.css";
 
-// export default class Reviews extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       user_name: "",
-//       text: ""
-//     };
-//   }
+export default class Reviews extends Component {
+	constructor() {
+	    super();
+	    this.state = {
+	    	reviews: [],
+	    	imdbId: ''
+	    };
+	    this.addReviewItem = this.addReviewItem.bind(this)
+	}
 
-//   componentDidMount() {
-//     this.setState({
-//       user_name: this.props.reviews.reviewItem.user_name,
-//       text: this.props.reviews.reviewItem.review
-//     });
-//   }
+	addReviewItem(event) {
+		event.preventDefault()
+		let reviewData = {
+			user_id: JSON.parse(localStorage.sessionDetails).localId,
+			imdb_id: this.props.imdbId,
+			text: event.target.reviewText.value
+		}
+		addReview(reviewData) 
+		.then(() => {
+			this.props.method();
+		})
+	}
 
-//   render() {
-//     console.log("sdasdsad");
-//     const element = (
-//       <div className="main-review-card">
-//         <div className="profile-pic">
-//           <i class="far fa-user profile-icon" />
-//         </div>
-//         <div className="review-text-part">
-//           <div className="user-name">{this.state.user_name}</div>
-//           <div className="review-text">{this.state.text}</div>
-//         </div>
-//       </div>
-//     );
-//     return element;
-//   }
-// }
+	componentWillReceiveProps(nextProps) {
+		this.setState ({
+			reviews: Object.values(nextProps.reviews),
+  			imdbId: nextProps.imdbId
+		})
+	}
+
+  	componentDidMount() {
+  		this.setState({
+  			reviews: Object.values(this.props.reviews),
+  			imdbId: this.props.imdbId
+  		})
+  	}
+
+  	render() {
+  		console.log(this.state.call)
+  		console.log(this.props.reviews)
+    	const element = <div>
+    						<div className="text-container">
+                            	<h3 className="recomended-text">Reviews</h3>
+                        	</div>
+    						<div>
+    							<form onSubmit={this.addReviewItem}>
+    								<input type='text' name='reviewText'/>
+    								<button type='submit' />
+    							</form>
+    						</div>
+    						{this.state.reviews.map((review) => {
+    							return 	<div>
+    										<div>
+    											<i class="far fa-user"/>
+    											<span>{review.user_name}</span>
+    										</div>
+    										<div>{review.review}</div>
+    										<br/>
+    									</div>
+    						})}
+    					</div>
+    	return element;
+  	}
+}

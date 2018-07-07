@@ -3,7 +3,8 @@ import logo from "../ICONS/icon.png";
 import "../CSS/Header.css";
 import "../CSS/header-responsive.css";
 import { NavLink } from "react-router-dom";
-import Logout from "./Logout.js";
+import { logout } from "../../MoviesBuffsApi.js";
+import Logout from './Logout.js';
 
 export default class Header extends Component {
     constructor() {
@@ -34,14 +35,14 @@ export default class Header extends Component {
                             <i class="fas fa-caret-down drop-down-arrow"></i>
                         </span>
                         <div className="dropdown-content">
-                            <NavLink to="/dashboard">Dashboard</NavLink>
-                            <NavLink to="/dashboard">User Profile</NavLink>
-                            <NavLink to="/dashboard">Logout</NavLink>
+                            <NavLink to='/dashboard'>Dashboard</NavLink>
+                            <NavLink to="#">User Profile</NavLink>
+                            <Logout />
                         </div>
                     </div>
                 </NavLink>
-                <span style={{'color':'white'}}className="nav-link"> |</span>
-                <NavLink className="nav-link hearder-containt-text" to="/search">Browse movies   </NavLink>
+                    <span className="nav-link"> | </span>
+                    <NavLink className="nav-link hearder-containt-text" to="/search">Browse movies   </NavLink>
             </div>
         </div>
         return element

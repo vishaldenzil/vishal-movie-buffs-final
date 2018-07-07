@@ -8,36 +8,25 @@ class Logout extends Component {
   constructor() {
     super();
     this.handleLogout = this.handleLogout.bind(this);
-  }
+}
 
-  handleLogout() {
+handleLogout() {
     logout(JSON.parse(localStorage.sessionDetails).refreshToken)
-      .then(() => {
+    .then(() => {
         this.props.history.push("/");
         localStorage.removeItem("sessionDetails");
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.log(error);
-      });
-  }
+    });
+}
 
-  render() {
-    const element = (
-     <div>
-      <i className="fas fa-user-tie logout-btn " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div> 
-                <NavLink className="drop-down" to="/dashboard">Dashboard</NavLink>
-              </div>
-              <div><hr /></div>
-              <div> 
-                <NavLink className="drop-down" to="/logout" onClick={this.handleLogout}>Logout</NavLink>
-              </div>
-      </div>
-    </div>
-    );
+render() {
+    const element = <NavLink to='#'>
+                        <span onClick={this.handleLogout}>Logout</span>
+                    </NavLink>
     return element;
-  }
+}
 }
 
 export default withRouter(Logout);
