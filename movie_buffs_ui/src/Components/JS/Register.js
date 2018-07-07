@@ -146,7 +146,7 @@ export default class Register extends Component {
                                 </div>
                                 <button type="button" onClick={this.handleRegister}>
                                     Register
-                </button>
+                                </button>
                             </form>
                             <div className="back-to-sign-in">
                                 <NavLink to="/">
