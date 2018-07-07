@@ -23,7 +23,6 @@ export default class Description extends Component {
             };
     }
 
-
     componentDidMount() {
         let id = this.props.match.params.id;
         searchId(id).then(movie => {
