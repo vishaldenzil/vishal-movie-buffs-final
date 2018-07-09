@@ -1,9 +1,8 @@
-/*@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");*/
 
 .movie-shelf-container {
   margin-top: 0px;
   height: fit-content;
-  min-height: 70vh;
+  min-height: 100vh;
 }
 @media screen and (max-width: 932px) {
   .movie-shelf-container {

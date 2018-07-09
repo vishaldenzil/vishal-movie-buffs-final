@@ -1,13 +1,19 @@
-.iframe {
-    box-sizing: border-box;
-    grid-column: 2;
-    grid-row: 1;
-    /* margin-left: 5%;
-    margin-right: 5%; */
-    margin: auto;
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container Iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 7.5%;
+    right: 7.5%;
     width: 100%;
-    height: 60vh;
-    border: 8px solid gray;
-    border-radius: 5px;
-    padding: 0px;
-  }
+    height: 100%;
+}
