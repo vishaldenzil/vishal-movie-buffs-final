@@ -51,9 +51,24 @@ export default class Reviews extends Component {
             </div>
             <div>
                 <form onSubmit={this.addReviewItem}>
+                    <div className="input-group input-text-margin">
+                        <span >
+                            <button className="input-group-addon-register add-review-button" type='submit' ><i class="fas fa-comment-alt" /> </button>
+                        </span>
+                        <input
+                            className="form-control height-width"
+                            type="text"
+                            name='reviewText'
+                            placeholder="Add Reviews"
+                            value={this.state.firstName}
+                            onChange={this.handleFirstNameChange}
+                        />
+                    </div>
+                </form>
+                {/* <form onSubmit={this.addReviewItem}>
                     <input type='text' name='reviewText' />
                     <button type='submit' />
-                </form>
+                </form> */}
             </div>
 
         </div>

@@ -8,12 +8,13 @@
 }
 
 .comments-scroll {
-   overflow-x: hidden;
-   overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     max-height: 700px;
     position: relative;
 }
-.comment{
+
+.comment {
     position: relative;
     background: #171717;
     padding: 20px;
@@ -29,11 +30,11 @@
     float: left;
 }
 
-.avatar-img{
+.avatar-img {
     border-radius: 150px;
 }
 
-.comment-text{
+.comment-text {
     margin-left: 55px;
     font-size: .9em;
     display: inline;
@@ -47,7 +48,6 @@
     grid-template-columns: 10% 10% 85%;
     grid-template-rows: 100%;
 }
-
 
 .profile-icon {
     font-size: 5rem;
@@ -73,6 +73,15 @@
     grid-row: 2;
     font-size: 1rem;
     font-family: 'Slabo 27px', serif;
+}
+
+.add-review-button {
+    margin: 0px;
+    background: white;
+    color: #171717;
+    
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 @media screen and (max-width:1000px) {
