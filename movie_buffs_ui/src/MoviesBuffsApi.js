@@ -1,5 +1,5 @@
-const api = "http://127.0.0.1:8000"
-// const api = "https://rahulpugal.pythonanywhere.com/"
+// const api = "http://127.0.0.1:8000"
+const api = "https://rahulpugal.pythonanywhere.com/"
 
 
 export const register = (firstName, lastName, age, email, password) => {
